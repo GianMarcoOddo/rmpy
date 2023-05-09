@@ -875,9 +875,9 @@ print(mVars)
 This example calculates the marginal VaRs of a Portfolio consisting of a short positions of 1000 in the first asset, long positions of 2500 in the second asset, 
 and long positions of 7000 in the third asset.
 
-`13. yf_componets_VaRs`
+`13. yf_components_VaRs`
 
--  yf_componets_VaRs(tickers, positions, start_date, end_date,interval = 1, freq="daily", alpha=0.01, display=True)
+-  yf_components_VaRs(tickers, positions, start_date, end_date,interval = 1, freq="daily", alpha=0.01, display=True)
 
 The function 'yf_components_VaRs' enables the calculation of the Component VaRs for a PORTFOLIO by utilizing data obtained from Yahoo Finance (yFinance).
 
@@ -895,7 +895,7 @@ The function 'yf_components_VaRs' enables the calculation of the Component VaRs 
 ### Example:
 
 ```python
-from rmpy.PaVaR import yf_componets_VaRs
+from rmpy.PaVaR import yf_components_VaRs
 tickers = ['AAPL', 'MSFT']
 positions = [-1000, 5000]
 start_date = '2020-01-01'
@@ -904,16 +904,16 @@ interval = 5
 freq = "daily"
 alpha = 0.01
 display = True
-yf_componets_VaRs(tickers, positions, start_date, end_date, interval=interval, freq=freq, alpha=alpha, display=display)
+yf_components_VaRs(tickers, positions, start_date, end_date, interval=interval, freq=freq, alpha=alpha, display=display)
 # OR
-cVars = yf_componets_VaRs(tickers, positions, start_date, end_date, interval=interval, freq=freq, alpha=alpha, display=False)
+cVars = yf_components_VaRs(tickers, positions, start_date, end_date, interval=interval, freq=freq, alpha=alpha, display=False)
 print(cVars)
 ```
 This example calculates the 5-day component parametrics VaRs for a Portfolio with short position of 1000 in Apple Inc and a long position of 5000 in Microsoft Corp.
 
-`14. componets_VaRs`
+`14. components_VaRs`
 
--  cVars = componets_VaRs(returns, positions, interval=1, alpha=0.01)
+-  cVars = components_VaRs(returns, positions, interval=1, alpha=0.01)
 
 The function 'components_VaRs' enables the calculation of the components VaRs of a portfolio, given a set of returns.
 
@@ -927,20 +927,20 @@ The function 'components_VaRs' enables the calculation of the components VaRs of
 ### Example:
 
 ```python
-from rmpy.PaVaR import componets_VaRs
+from rmpy.PaVaR import components_VaRs
 import numpy as np
 returns = np.random.uniform(-0.05, 0.05, size=(10, 3))  # Replace this with actual returns
 positions = [-1000, 2500, 7000]
 interval = 1
 alpha = 0.01
-cVars = componets_VaRs(returns, positions, interval=interval, alpha=alpha)
+cVars = components_VaRs(returns, positions, interval=interval, alpha=alpha)
 print(cVars)
 ```
 This example calculates the component VaRs of a Portfolio consisting of a short positions of 1000 in the first asset, long positions of 2500 in the second asset,  and long positions of 7000 in the third asset.
 
-`15. yf_relcomponets_VaRs`
+`15. yf_relcomponents_VaRs`
 
-- yf_relcomponets_VaRs(tickers, positions, start_date, end_date,interval = 1, freq="daily", alpha=0.01, display=True)
+- yf_relcomponents_VaRs(tickers, positions, start_date, end_date,interval = 1, freq="daily", alpha=0.01, display=True)
 
 The function 'yf_relative_components_VaRs' enables the calculation of the Relative Component VaRs for a PORTFOLIO by utilizing data obtained from Yahoo Finance (yFinance).
 
@@ -958,7 +958,7 @@ The function 'yf_relative_components_VaRs' enables the calculation of the Relati
 ### Example:
 
 ```python
-from rmpy.PaVaR import yf_relcomponets_VaRs
+from rmpy.PaVaR import yf_relcomponents_VaRs
 tickers = ['AAPL', 'MSFT']
 positions = [-1000, 5000]
 start_date = '2020-01-01'
@@ -967,16 +967,16 @@ interval = 5
 freq = "daily"
 alpha = 0.01
 display = True
-yf_relcomponets_VaRs(tickers, positions, start_date, end_date, interval=interval, freq=freq, alpha=alpha, display=display)
+yf_relcomponents_VaRs(tickers, positions, start_date, end_date, interval=interval, freq=freq, alpha=alpha, display=display)
 # OR
-rcVars = yf_relcomponets_VaRs(tickers, positions, start_date, end_date, interval=interval, freq=freq, alpha=alpha, display=False)
+rcVars = yf_relcomponents_VaRs(tickers, positions, start_date, end_date, interval=interval, freq=freq, alpha=alpha, display=False)
 print(rcVars)
 ```
 This example calculates the 5-day relative component parametrics VaRs for a Portfolio with short position of 1000 in Apple Inc and a long position of 5000 in Microsoft Corp.
 
-`16. relcomponets_VaRs`
+`16. relcomponents_VaRs`
 
--  rcVars = relcomponets_VaRs(returns, positions, interval=1, alpha=0.01)
+-  rcVars = relcomponents_VaRs(returns, positions, interval=1, alpha=0.01)
 
 The function 'relcomponents_VaRs' enables the calculation of the relative components VaRs of a portfolio, given its returns.
 
@@ -991,13 +991,13 @@ The function 'relcomponents_VaRs' enables the calculation of the relative compon
 ### Example:
 
 ```python
-from rmpy.PaVaR import relcomponets_VaRs
+from rmpy.PaVaR import relcomponents_VaRs
 import numpy as np
 returns = np.random.uniform(-0.05, 0.05, size=(10, 3))  # Replace this with actual returns
 positions = [-1000, 2500, 7000]
 interval = 1
 alpha = 0.01
-rcVars = relcomponets_VaRs(returns, positions, interval=interval, alpha=alpha)
+rcVars = relcomponents_VaRs(returns, positions, interval=interval, alpha=alpha)
 print(rcVars)
 ```
 This example calculates the relative component VaRs of a Portfolio consisting of a short positions of 1000 in the first asset, long positions of 2500 in the second asset, and long positions of 7000 in the third asset.
