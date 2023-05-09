@@ -11,7 +11,7 @@ pip install rmpy
 ```
 ---
 
-## Git Repository
+## Github Repository
 
 ## https://github.com/GianMarcoOddo/rmpy
 
