@@ -27,7 +27,7 @@ from .PaVaR import yf_und_vs_pVaR_port
 from .PaVaR import und_vs_pVaR_port
 from .PaVaR import yf_marginal_VaRs
 from .PaVaR import marginal_VaRs
-from .PaVaR import yf_componets_VaRs
-from .PaVaR import componets_VaRs
-from .PaVaR import yf_relcomponets_VaRs
-from .PaVaR import relcomponets_VaRs
+from .PaVaR import yf_components_VaRs
+from .PaVaR import components_VaRs
+from .PaVaR import yf_relcomponents_VaRs
+from .PaVaR import relcomponents_VaRs
