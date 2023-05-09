@@ -6,7 +6,7 @@ def check_ticker_single(ticker, types, name, single_value=False, values=None):
     '''
     Check if a ticker value is valid.
 
-    Args: ddddddd
+    Args:
     ticker: A ticker value to check.
     types: A tuple of types that the ticker value can be. 
     name: A string representing the name of the ticker value. 
@@ -192,9 +192,6 @@ def check_freq(freq, allowed_values=["daily", "weekly", "monthly"]):
 ## check_alpha ################################################################################################################################################
 ############################################################################################################################################################################
 
-## check_alpha ################################################################################################################################################
-############################################################################################################################################################################
-
 def check_alpha(alpha):
     """
     Check if an alpha value or a list of alpha values is valid.
@@ -211,7 +208,7 @@ def check_alpha(alpha):
     import numpy as np
 
     # Check input type
-    if not isinstance(alpha, (float, np.float32, np.float64, np.float128, list, np.ndarray, pd.Series)):
+    if not isinstance(alpha, (float, np.float32, np.float64, list, np.ndarray, pd.Series)):
         raise TypeError(f"The alpha should be one of the following types: float, list, np.ndarray, pd.Series")
 
     # Convert to list if input is pd.Series or np.ndarray
@@ -231,12 +228,13 @@ def check_alpha(alpha):
         alpha = alpha[0]
 
     # Check alpha range
-    if not isinstance(alpha, (float, np.float32, np.float64, np.float128)):
+    if not isinstance(alpha, (float, np.float32, np.float64)):
         raise TypeError("The alpha value should be a number (float)")
     if alpha <= 0 or alpha >= 1:
         raise ValueError("The alpha value should be between 0 and 1")
 
     return alpha
+
 
 ## check_kind ################################################################################################################################################
 ############################################################################################################################################################################
@@ -343,46 +341,42 @@ def check_tickers_port(tickers):
     ValueError: If there are duplicate tickers in the list or array.
     """
 
+    import pandas as pd ; import numpy as np
+
+    if not isinstance(tickers, (list, np.ndarray, pd.Series)):
+        raise TypeError("Tickers should be provided in the following object: [ np.ndarray, pd.core.series.Series, list ]")
+
     # Convert to upper case
     tickers = [x.upper() for x in tickers]
 
-    import pandas as pd ; import numpy as np
-
-    if isinstance(tickers, pd.DataFrame):
-        raise TypeError("Tickers should be provided in the following object: [ np.ndarray, pd.core.series.Series, list ]")
-    
     if isinstance(tickers, pd.Series):
-
-        tickers = tickers.tolist()
-
+        tickers = list(tickers)
         if len(tickers) == 0:
             raise Exception("The Series with the tickers is empty")
 
     if isinstance(tickers, np.ndarray):
         if len(tickers) == 0:
             raise Exception("The array with the tickers is empty")
-        
+
         if tickers.ndim > 1:
             raise Exception("The tickers array should be a one-dimensional array")
         
-        tickers = tickers.tolist()
+        tickers = list(tickers)
 
     if isinstance(tickers, list):
         if len(tickers) == 0:
             raise Exception("The list with the tickers is empty")
-        
         if np.ndim(tickers) > 1:
             raise Exception("The tickers list should be a one-dimensional list")
-        
-    if len(tickers) == 1 or isinstance(tickers, str):
-        raise Exception("Only one ticker has been provided, this function works with multiple tickers")
+        if len(tickers) == 1:
+            raise Exception("Only one ticker has been provided, this function works with multiple tickers")
+            # Check for duplicate tickers
+        if len(tickers) != len(set(tickers)):
+            raise ValueError("Duplicate tickers found. Please ensure all tickers are unique.")
     
     if not all(isinstance(item, str) for item in tickers):
         raise TypeError("The list, array or Series of tickers should contain only strings")
-    
-    # Check for duplicate tickers
-    if len(tickers) != len(set(tickers)):
-        raise ValueError("Duplicate tickers found. Please ensure all tickers are unique.")
+
     
     return tickers
 
@@ -407,7 +401,7 @@ def check_positions_port(positions):
 
     import pandas as pd ; import numpy as np
 
-    if isinstance(positions, pd.DataFrame):
+    if not isinstance(positions, (np.ndarray, pd.core.series.Series, list)):
         raise TypeError("Positions should be provided in the following object: [ np.ndarray, pd.core.series.Series, list ]")
     
     if isinstance(positions, pd.Series):
@@ -437,10 +431,6 @@ def check_positions_port(positions):
             raise TypeError("The list of positions should contain only numbers")
         
         positions = np.array(positions)
-
-    if isinstance(positions, (int,float)):
-        
-        positions = np.array([positions])
 
     return positions
 
@@ -473,7 +463,7 @@ def validate_returns_single(returns):
         dim = np.ndim(returns)
         if dim > 1:
             raise Exception("The returns list should be one-dimensional or should contain returns for only one asset")
-        if not all(isinstance(item, (float, np.float16, np.float32, np.float64, np.float128)) for item in returns):
+        if not all(isinstance(item, (float, np.float16, np.float32, np.float64)) for item in returns):
             raise TypeError("The list of returns should contain only numbers - (Percentages)")
         returns = np.asarray(returns)
 
@@ -481,7 +471,7 @@ def validate_returns_single(returns):
         returns = returns.values
         if len(returns) == 0:
             raise Exception("The Series of returns is empty")
-        if not all(isinstance(item, (float, np.float16, np.float32, np.float64, np.float128)) for item in returns):
+        if not all(isinstance(item, (float, np.float16, np.float32, np.float64)) for item in returns):
             raise TypeError("The Series of returns should contain only numbers - (Percentages)")
         returns = np.asarray(returns)
 
@@ -491,7 +481,7 @@ def validate_returns_single(returns):
         dim = np.ndim(returns)
         if dim > 1:
             raise Exception("The returns array should be one-dimensional or should contain returns for only one asset")
-        if not all(isinstance(item, (float, np.float16, np.float32, np.float64, np.float128)) for item in returns):
+        if not all(isinstance(item, (float, np.float16, np.float32, np.float64)) for item in returns):
             raise TypeError("The array of returns should contain only numbers")
 
     if isinstance(returns,pd.DataFrame):
@@ -500,7 +490,7 @@ def validate_returns_single(returns):
         if returns.shape[1] > 1:
             raise Exception("A DataFrame with more than one column has been provided, this function works only with one asset at the time")
         for col in returns.columns:
-            if not all(isinstance(item, (float, np.float16, np.float32, np.float64, np.float128)) for item in returns[col]):
+            if not all(isinstance(item, (float, np.float16, np.float32, np.float64)) for item in returns[col]):
                 raise TypeError(f"The DataFrame column {col} should contain only numbers - Percentages")
         if returns.shape[1] == 1:
             returns = returns.values
@@ -675,7 +665,7 @@ def check_confidence_level(confidence_level):
         confidence_level = confidence_level[0]
 
     # Handle if confidence_level is a number
-    if not isinstance(confidence_level, (float, np.int32, np.int64 , np.uint64, np.float16, np.float32, np.float64, np.float128)):
+    if not isinstance(confidence_level, (float, np.int32, np.int64, np.float16, np.float32, np.float64)):
         raise TypeError("The confidence_level parameter must be a float number between 0 and 1")
 
     # Ensure the value of confidence_level is between 0 and 1
@@ -731,7 +721,7 @@ def check_interval(interval):
         
 
     # Handle if interval is a number
-    if not isinstance(interval, (int, np.int32, np.int64 , np.uint64)):
+    if not isinstance(interval, (int, np.int32, np.int64 )):
         raise TypeError("The interval parameter must be an integer ")
 
     # Ensure the value of interval higher than one
