@@ -192,14 +192,16 @@ def check_freq(freq, allowed_values=["daily", "weekly", "monthly"]):
 ## check_alpha ################################################################################################################################################
 ############################################################################################################################################################################
 
-def check_alpha(alpha):
+## check_alpha ################################################################################################################################################
+############################################################################################################################################################################
 
+def check_alpha(alpha):
     """
     Check if an alpha value or a list of alpha values is valid.
     Args:
     alpha: A float, list, numpy array, or pandas series representing one or more alpha values.
     Returns:
-    None
+    alpha: A float representing a valid alpha value.
     Raises:
     TypeError: If the alpha value is not a float, list, numpy array, or pandas series.
     ValueError: If more than one alpha value is provided, or if the alpha value is not within the range of 0 to 1.
@@ -208,39 +210,31 @@ def check_alpha(alpha):
     import pandas as pd
     import numpy as np
 
-    def check_input_type(input, types, name):
-        if not isinstance(input, types):
-            raise TypeError(f"The {name} should be one of the following types: {types}")
+    # Check input type
+    if not isinstance(alpha, (float, np.float32, np.float64, np.float128, list, np.ndarray, pd.Series)):
+        raise TypeError(f"The alpha should be one of the following types: float, list, np.ndarray, pd.Series")
 
-    def check_single_value(input, name):
-        if isinstance(input, (list, np.ndarray, pd.Series)) and len(input) > 1:
-            raise ValueError(f"More than one {name} has been provided. This function works only with one {name} at a time")
+    # Convert to list if input is pd.Series or np.ndarray
+    if isinstance(alpha, (pd.Series, np.ndarray)):
+        if len(alpha) == 0: 
+            raise ValueError("No alpha provided")
+        if len(alpha) > 1:
+            raise ValueError("More than one alpha provided")
+        alpha =  list(alpha)
 
-    def convert_to_list(input):
-        if isinstance(input, (pd.Series, np.ndarray)):
-            if len(input) == 0: 
-                raise ValueError("No alpha provided")
-            if len(input) > 1:
-                raise Exception("More than one alpha provided")
-            input=  list(input)
-        if isinstance(input, list):
-            if len(input) == 0: 
-                raise ValueError("No alpha provided")
-            if len(input) > 1:
-                raise Exception("More than one alpha provided")
-            input =  input[0]
-        return input
+    # Check if input is list and convert to single float
+    if isinstance(alpha, list):
+        if len(alpha) == 0: 
+            raise ValueError("No alpha provided")
+        if len(alpha) > 1:
+            raise ValueError("More than one alpha provided")
+        alpha = alpha[0]
 
-    def check_alpha_range(alpha):
-        if not isinstance(alpha, (int, float)):
-            raise TypeError("The alpha value should be a number (float)")
-        if alpha <= 0 or alpha >= 1:
-            raise ValueError("The alpha value should be between 0 and 1")
-
-    check_input_type(alpha, (float, list, np.ndarray, pd.Series), "alpha")
-    alpha = convert_to_list(alpha)
-    check_single_value(alpha, "alpha")
-    check_alpha_range(alpha)
+    # Check alpha range
+    if not isinstance(alpha, (float, np.float32, np.float64, np.float128)):
+        raise TypeError("The alpha value should be a number (float)")
+    if alpha <= 0 or alpha >= 1:
+        raise ValueError("The alpha value should be between 0 and 1")
 
     return alpha
 
