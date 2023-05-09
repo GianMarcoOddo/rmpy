@@ -35,7 +35,7 @@ Get started with `rmpy` today and take control of your financial risk management
 # 1. NpVaR Module
 
 This module calculates the Non-parametric Value-at-Risk (NpVaR) and associated functions for single assets or portfolios using historical returns. 
-The functions with the `yf_` prefix use data from the Yahoo Finance API, whereas the others use the provided returns. The `_single` functions are for individual assets, and the `_port` functions are for portfolios. The `_conflevel_` functions calculate the NpVaR with a specified confidence level. The `_summary_` functions provide summaries for NpVaR calculations. The `_marg_NpVaRs_scale_factor` functions calculate the marginal NpVaRs given a scaling factor.
+Functions with the `yf_` prefix use data from the Yahoo Finance API, whereas the others use the provided returns. The `_single` functions are for individual assets, and the `_port` functions are for portfolios. The `_conflevel_` functions calculate the NpVaR with a specified confidence level. The `_summary_` functions provide summaries for NpVaR calculations. The `_marg_NpVaRs_scale_factor` functions calculate the marginal NpVaRs given a scaling factor.
 Please refer to the code below for the syntax and examples on how to use each function. The input parameters and their usage are described within the comments.
 
 It contains the following functions:
@@ -54,7 +54,7 @@ This function yf_npVaR_single calculates the quantile non-parametric value at ri
 - end_date: the ending date for which we want to obtain historical prices. This can be a string in the format "YYYY-MM-DD" or a datetime object. By default, this is set to "today" 
 which will use the current date as the ending date.
 - freq: the frequency of the historical prices. This can be set to "daily", "weekly", or "monthly". By default, this is set to "daily".
-- alpha: the confidence level for the VaR calculation. This is a value between 0 and 1, representing the probability of loss exceeding the VaR. By default, this is set to 0.01 (1%).
+- alpha: the significance level for the VaR calculation. This is a value between 0 and 1, representing the probability of loss exceeding the VaR. By default, this is set to 0.01 (1%).
 - kind: the type of VaR calculation to use. This can be set to "abs" for absolute VaR or "rel" for relative VaR. By default, this is set to "abs".
 - display: a boolean value or string representing whether to display the calculated VaR. This can be set to True or False. By default, this is set to True.
 
@@ -85,7 +85,7 @@ This function calculates the quantile non-parametric Value at Risk (VaR) for a p
 
 #### Args:
 
-- tickers: A list of strings representing the tickers of the assets in the portfolio. #### note that all the TICKERS provided should be part of the portfolio whose VaR is being calculated ####
+- tickers: A list of strings representing the tickers of the assets in the portfolio. #### Note that all the TICKERS provided should be part of the portfolio whose VaR is being calculated ####
 - positions: A list of integers or floats representing the positions of the assets in the portfolio. The length of this list should be the same as the 'tickers' list.
 - start_date: A string representing the start date for the historical price data in the format 'YYYY-MM-DD'.
 - end_date: A string representing the end date for the historical price data in the format 'YYYY-MM-DD'. By default, it is set to "today".
