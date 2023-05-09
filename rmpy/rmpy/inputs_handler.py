@@ -6,7 +6,7 @@ def check_ticker_single(ticker, types, name, single_value=False, values=None):
     '''
     Check if a ticker value is valid.
 
-    Args: ddd
+    Args: ddddddd
     ticker: A ticker value to check.
     types: A tuple of types that the ticker value can be. 
     name: A string representing the name of the ticker value. 
