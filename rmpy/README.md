@@ -117,7 +117,7 @@ This example calculates the daily non-parametric VaR for a Portfolio with short 
 
 - VaR = npVaR_single(returns, position, alpha=0.01, kind = "abs")
 
-This function npVaR_single calculates the quantile non-parametric value at risk (VaR) for a SINGLE asset using historical returns data (you can use every type of assets e.g stock,options,bonds, ecc.)
+This function npVaR_single calculates the quantile non-parametric Value at Risk (VaR) for a SINGLE asset using historical returns data (you can use every type of assets e.g stock, options, bonds, ecc.)
 
 #### Args:
 
@@ -144,7 +144,7 @@ This example calculates the absolute non-parametric VaR consisting of a single s
 
 - VaR = npVaR_port(returns, position, alpha=0.01, kind = "abs")
 
-This function npVaR_port calculates the quantile non-parametric value at risk (VaR) for a PORTFOLIO of assets using historical returns data (you can use every type of assets e.g stock,options,bonds, ecc.) 
+This function npVaR_port calculates the quantile non-parametric value at risk (VaR) for a PORTFOLIO of assets using historical returns data (you can use every type of assets e.g stock, options, bonds, ecc.) 
 
 #### Args:
 
@@ -171,7 +171,7 @@ This example calculates the relative non-parametric VaR consisting of a portfoli
 
 - yf_conflevel_npVaR_single(ticker, position, start_date, end_date, freq="daily", alpha= 0.01,confidence_level = 0.95, display=True)
 
-This function yf_conflevel_npVaR_single calculates the quantile non-parametric value at risk (VaR) for a SINGLE asset using Yahoo Finance data. It first downloads historical price data from Yahoo Finance, calculates the returns of the asset, and then calculates the VaR a its confidence level (lower and upper bound)
+This function yf_conflevel_npVaR_single calculates the quantile non-parametric Value at Risk (VaR) for a SINGLE asset using Yahoo Finance data. It first downloads historical price data from Yahoo Finance, calculates the returns of the asset, and then calculates the VaR at its confidence level (lower and upper bound).
 
 #### Args:
 
@@ -207,7 +207,7 @@ This example calculates the absolute non-parametric VaR with its lower and upper
 
 -  yf_conflevel_npVaR_port(tickers, positions, start_date, end_date, freq= "daily",alpha=0.01,confidence_level=0.95, display=display)
 
-This function yf_conflevel_npVaR_port calculates the quantile non-parametric value at risk (VaR) for a PORTFOLIO of assets using Yahoo Finance data. It first downloads historical price data from Yahoo Finance for each asset in the portfolio, calculates the returns of each asset, and then  calculates the portfolio VaR, the lower and the upper bound at a specified confidence level and alpha level.
+This function yf_conflevel_npVaR_port calculates the quantile non-parametric Value at Risk (VaR) for a PORTFOLIO of assets using Yahoo Finance data. It first downloads historical price data from Yahoo Finance for each asset in the portfolio, calculates the returns of each asset, and then  calculates the portfolio VaR, the lower and the upper bound at a specified confidence level and alpha level.
 
 #### Args:
 
@@ -267,13 +267,13 @@ print(VaR)
 VaR = yf_conflevel_npVaR_port(tickers, positions, start_date, end_date, freq=freq, alpha=alpha, confidence_level=confidence_level, display=False)
 print(VaR)
 ```
-This example calculates the non-parametric VaR and its lower and upper bound (95% confidence interval) consisting of a position of -1000 in the given asset.
+This example calculates the non-parametric VaR and its lower and upper bound (95% confidence interval) consisting of a position of -1000 (short position) in the given asset.
 
 `8. conflevel_npVaR_port`
 
 - VaR = conflevel_npVaR_port(returns, positions ,confidence_level= 0.95, alpha=0.01)
 
-This function conflevel_npVaR_port calculates the quantile non-parametric value at risk (VaR) for a PORTFOLIO of assets using historical returns data (you can use every type of assets e.g stock,options,bonds, ecc.) with a specific confidence interval and alpha value. It also calculates the lower and the upper bound of this estimation. 
+This function conflevel_npVaR_port calculates the quantile non-parametric Value at Risk (VaR) for a PORTFOLIO of assets using historical returns data (you can use every type of assets e.g stock, options, bonds, ecc.) with a specific confidence interval and alpha value. It also calculates the lower and the upper bound of this estimation. 
 
 #### Args:
 
@@ -294,23 +294,23 @@ alpha = 0.01
 VaR = conflevel_npVaR_port(returns, positions, confidence_level=confidence_level, alpha=alpha)
 print(VaR)
 ```
-This example calculates the non-parametric VaR consisting and its lower and upper bound (95% CI) of portfolio consisting of a postion of -1000 in the first asset, 2000 in the second asset and - 3000 in the third one.
+This example calculates the non-parametric VaR consisting and its lower and upper bound (95% CI) of portfolio consisting of a postion of -1000 (short position) in the first asset, 2000 (long position) in the second asset and -3000 (short position) in the third one.
 
 `9. yf_npVaR_summary_single`
 
 - yf_npVaR_summary_single(ticker, position, start_date, end_date, freq="daily", alpha=0.01, display=display)
     
-This function yf_npVaR_summary_single calculates the quantile non-parametric value at risk (VaR) for a SINGLE stock position using historical prices obtained from Yahoo Finance (yfinance). This function is usefull to visualize some risk metrics of the single asset npVaR.
+This function yf_npVaR_summary_single calculates the quantile non-parametric Value at Risk (VaR) for a SINGLE stock position using historical prices obtained from Yahoo Finance (yfinance). This function is useful to visualize some risk metrics of the single asset npVaR.
 
 #### Args:
 
-- ticker: the stock symbol or ticker of the company for which we want to calculate the VaR. This can be a string (for a single ticker) or a list or array of tickers (for multiple tickers).
-- position: the size of the position in shares or currency. This can be a single value or an array of values corresponding to each ticker in the ticker argument.
-- start_date: the starting date for which we want to obtain historical prices. This can be a string in the format "YYYY-MM-DD" or a datetime object.
-- end_date: the ending date for which we want to obtain historical prices. This can be a string in the format "YYYY-MM-DD" or a datetime object. By default, this is set to "today" which will use the current date as the ending date.
-- freq: the frequency of the historical prices. This can be set to "daily", "weekly", or "monthly". By default, this is set to "daily".
-- alpha: the confidence level for the VaR calculation. This is a value between 0 and 1, representing the probability of loss exceeding the VaR. By default, this is set to 0.01 (1%).
-- display: a boolean value or string representing whether to display the calculated VaR. This can be set to True, "True", "T", False, "False", or "F". By default, this is set to True.
+- ticker: The stock symbol or ticker of the company for which we want to calculate the VaR. This can be a string (for a single ticker) or a list or array of tickers (for multiple tickers).
+- position: The size of the position in shares or currency. This can be a single value or an array of values corresponding to each ticker in the ticker argument.
+- start_date: The starting date for which we want to obtain historical prices. This can be a string in the format "YYYY-MM-DD" or a datetime object.
+- end_date: The ending date for which we want to obtain historical prices. This can be a string in the format "YYYY-MM-DD" or a datetime object. By default, this is set to "today" which will use the current date as the ending date.
+- freq: The frequency of the historical prices. This can be set to "daily", "weekly", or "monthly". By default, this is set to "daily".
+- alpha: The confidence level for the VaR calculation. This is a value between 0 and 1, representing the probability of loss exceeding the VaR. By default, this is set to 0.01 (1%).
+- display: A boolean value or string representing whether to display the calculated VaR. This can be set to True, "True", "T", False, "False", or "F". By default, this is set to True.
 
 ### Example:
 
@@ -333,7 +333,7 @@ This example calculates several metrics for the non-parametric VaR summary for a
 
 - yf_npVaR_summary_port(tickers, positions, start_date, end_date, freq="daily", alpha=0.01, display=True)
 
- This function 'yf_npVaR_summary_port' is designed to calculate the quantile non-parametric Value at Risk (VaR) for a PORTFOLIO of assets using historical prices obtained from Yahoo Finance (yfinance). This function is usefull to visualize several risk metrics of the Portfolio npVaR.
+ This function 'yf_npVaR_summary_port' is designed to calculate the quantile non-parametric Value at Risk (VaR) for a PORTFOLIO of assets using historical prices obtained from Yahoo Finance (yfinance). This function is useful to visualize several risk metrics of the Portfolio npVaR.
 
 #### Args:
 
@@ -392,7 +392,7 @@ This example calculates all the metrics for the non-parametric VaR for a single 
 
 - summary = npVaR_summary_port(returns, positions, alpha=alpha)
 
-The function npVaR_summary_port calculates the quantile non-parametric value at risk (VaR) and several risk metrics for a npVaR of a portfolio.
+The function npVaR_summary_port calculates the quantile non-parametric Value at Risk (VaR) and several risk metrics for a npVaR of a portfolio.
 
 #### Args:
 
@@ -411,24 +411,24 @@ alpha = 0.01
 summary = npVaR_summary_port(returns, positions, alpha=alpha)
 print(summary)
 ```
-This example shows how to use the npVaR_summary_port function with a 10x3 numpy array of historical returns and a list of positions for 3 assets in the portfolio. The function calculates the non-parametric value at risk (VaR) and other risk measures, returning them in a dictionary.
+This example shows how to use the npVaR_summary_port function with a 10x3 numpy array of historical returns and a list of positions for 3 assets in the portfolio. The function calculates the non-parametric Value at Risk (VaR) and other risk measures, returning them in a dictionary.
 
 `13. yf_marg_NpVaRs_scale_factor`
 
 - yf_marg_NpVaRs_scale_factor(tickers, positions, start_date, end_date, scale_factor=0.1, freq="daily", alpha=0.01, display=True)
 
- The function yf_marg_NpVaRs_scale_factor calculates the Marginal Non-Parametric VaRs and their changes for a PORTFOLIO of assets over a given period of time, using a specified scale factor,using historical prices obtained from Yahoo Finance (yfinance). New position = old one + (old one * scale_factor) in the same direction (- if short and + if long)
+The function yf_marg_NpVaRs_scale_factor calculates the Marginal Non-Parametric VaRs and their changes for a PORTFOLIO of assets over a given period of time, using a specified scale factor,using historical prices obtained from Yahoo Finance (yfinance). New position = old one + (old one * scale_factor) in the same direction (- if short and + if long)
 
 #### Args:
 
-- tickers: a list of tickers for the assets in the portfolio.
-- positions: a list of positions for each asset in the portfolio.
-- start_date: the start date of the analysis period.
-- end_date: the end date of the analysis period (optional, default is "today").
-- scale_factor: the scale factor used to calculate the Marginal Non-Parametric VaRs (optional, default is 0.1).
-- freq: the frequency of the data (optional, default is "daily").
-- alpha: the confidence level used in calculating the VaRs (optional, default is 0.01).
-- display: a boolean indicating whether to print the resulting VaR changes (optional, default is True).
+- tickers: A list of tickers for the assets in the portfolio.
+- positions: A list of positions for each asset in the portfolio.
+- start_date: The start date of the analysis period.
+- end_date: The end date of the analysis period (optional, default is "today").
+- scale_factor: The scale factor used to calculate the Marginal Non-Parametric VaRs (optional, default is 0.1).
+- freq: The frequency of the data (optional, default is "daily").
+- alpha: The confidence level used in calculating the VaRs (optional, default is 0.01).
+- display: A boolean indicating whether to print the resulting VaR changes (optional, default is True).
 
 ### Example:
 
@@ -458,9 +458,9 @@ The function marg_NpVaRs_scale_factor calculates the marginal changes in the non
 #### Args:
 
 - returns: A numpy array or pandas series of historical returns for the portfolio.
-- positions: a list or array containing the current positions of the assets in the portfolio.
-- scale_factor: a float representing the scale factor to be used for calculating the marginal changes in NpVaR.
-- alpha: a float representing the significance level for calculating the NpVaR.
+- positions: A list or array containing the current positions of the assets in the portfolio.
+- scale_factor: A float representing the scale factor to be used for calculating the marginal changes in NpVaR.
+- alpha: A float representing the significance level for calculating the NpVaR.
 
 ### Example:
 
@@ -474,7 +474,7 @@ alpha = 0.01
 NpVaR_changes = marg_NpVaRs_scale_factor(returns, positions, alpha=alpha)
 print(NpVaR_changes)
 ```
-In this example, we have calculated the marginal changes in the non-parametric value at risk (NpVaR) for a portfolio consisting of 5 assets. The function takes in historical returns data for the assets, the current positions of the assets, a scale factor, and a significance level (alpha).The result is a list of the marginal changes in NpVaR for each asset, which can be useful for understanding the risk contributions of individual positions within the portfolio and designing risk management strategies to mitigate potential losses.
+In this example, we have calculated the marginal changes in the non-parametric Aalue at Risk (NpVaR) for a portfolio consisting of 5 assets. The function takes in historical returns data for the assets, the current positions of the assets, a scale factor, and a significance level (alpha). The result is a list of the marginal changes in NpVaR for each asset, which can be useful for understanding the risk contributions of individual positions within the portfolio and designing risk management strategies to mitigate potential losses.
 
 # 2. PaVaR Module
 
@@ -498,7 +498,7 @@ The function 'yf_pVaR_single' enables the calculation of parametric VaR for a SI
 - position: The value held. This can be a positive or negative number, depending if you are long or short.
 - start_date: A string representing the starting date for the historical data used in the VaR calculation. This should be in the format "YYYY-MM-DD".
 - end_date: A string representing the ending date for the historical data used in the VaR calculation. This should also be in the format "YYYY-MM-DD".By default, this is set to "today".
-- interval: The time horizon of VaR. It is related to frequency (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+- interval: The time horizon of VaR. It is related to frequency (e.g. if "freq = 'monthly'' " and "interval = 1", the function computes 1-month VaR).
 - freq: The frequency at which returns will be downloaded.
 alpha: The significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
 - display: A boolean value that determines whether the function should display the results of the VaR calculation. By default, this is set to True, which means that the results will be displayed.
@@ -534,10 +534,10 @@ The function 'yf_pVaR_port' enables the calculation of parametric VaR for a PORT
 - positions: A list of integers or floats representing each position in the portfolio. This can be a positive or negative number, depending if you are long or short.
 - start_date: A string representing the starting date for the historical data used in the VaR calculation. This should be in the format "YYYY-MM-DD".
 - end_date: A string representing the ending date for the historical data used in the VaR calculation. This should also be in the format "YYYY-MM-DD".By default, this is set to "today".
-- interval: The time horizon of VaR. It is related to frequency (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
-- "freq": The frequency at which returns will be downloaded.
-- alpha": The significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
-- display": A boolean value that determines whether the function should display the results of the VaR calculation. By default, this is set to True, which means that the results will be displayed.
+- interval: The time horizon of VaR. It is related to frequency (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
+- freq: The frequency at which returns will be downloaded.
+- alpha: The significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
+- display: A boolean value that determines whether the function should display the results of the VaR calculation. By default, this is set to True, which means that the results will be displayed.
 
 ### Example:
 
@@ -563,14 +563,14 @@ This example calculates the 5-day parametric VaR for a Portfolio with short posi
 
 - VaR = pVaR_single(returns, position, interval = 1, alpha=0.01)
 
-The function 'pVaR_single' enables the calculation of parametric VaR for a SINGLE POSITION  based on a set of returns.
+The function 'pVaR_single' enables the calculation of parametric VaR for a SINGLE POSITION based on a set of returns (you can use every type of assets e.g stock, options, bonds, ecc.).
 
 #### Args:
 
-- returns: a pandas Series or NumPy array containing the historical returns of the asset or portfolio. 
-- position: the size of the position in units of the asset. 
-- interval": The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
-- alpha the confidence level for the VaR calculation. This is a value between 0 and 1, representing the probability of loss exceeding the VaR.By default, this is set to 0.01 (1%).
+- returns: A pandas Series or NumPy array containing the historical returns of the asset or portfolio. 
+- position: The size of the position in units of the asset. 
+- interval: The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
+- alpha: the confidence level for the VaR calculation. This is a value between 0 and 1, representing the probability of loss exceeding the VaR. By default, this is set to 0.01 (1%).
 
 ### Example:
 
@@ -590,14 +590,14 @@ This example calculates the parametric VaR consisting of a single short position
 
 - VaR = pVaR_port(returns, position,  interval = 1, alpha=0.01)
 
-The function 'pVaR_port' enables the calculation of parametric VaR for a PORTOFLIO based on a set of returns.
+The function 'pVaR_port' enables the calculation of parametric VaR for a PORTOFLIO based on a set of returns (you can use every type of assets e.g stock, options, bonds, ecc.).
 
 #### Args:
 
-- returns: a pandas Series or NumPy array containing the historical returns of the portfolio.
+- returns: A pandas Series or NumPy array containing the historical returns of the portfolio.
 - positions: A list of integers or floats representing each position in the portfolio. This can be a positive or negative number, depending if you are long or short.
-- interval": The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
-- alpha": The level of confidence for the VaR calculation. By default is set to 0.01, which represents a 99% confidence level.
+- interval: The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
+- alpha: The level of confidence for the VaR calculation. By default is set to 0.01, which represents a 99% confidence level.
 
 ### Example:
 
@@ -627,7 +627,7 @@ The function 'yf_conflevel_pVaR_single' enables the calculation of the confidenc
 - start_date: A string representing the starting date for the historical data used in the VaR calculation. This should be in the format "YYYY-MM-DD".
 - end_date: A string representing the ending date for the historical data used in the VaR calculation. This should also be in the format "YYYY-MM-DD".By default, this is set to "today".
 - freq: The frequency at which returns will be downloaded.
-- interval: The time horizon of VaR. It is related to frequency (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+- interval: The time horizon of VaR. It is related to frequency (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 - alpha: a float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
 - confidence_level: a float specifying the confidence level for the VaR calculation. By default, it is set to 0.95.
 - display: a boolean or string value indicating whether or not to display the results. The default value is set to True.
@@ -665,10 +665,10 @@ The function 'yf_conflevel_pVaR_port' enables the calculation of the confidence 
 - start_date: A string representing the starting date for the historical data used in the VaR calculation. This should be in the format "YYYY-MM-DD".
 - end_date: A string representing the ending date for the historical data used in the VaR calculation. This should also be in the format "YYYY-MM-DD".By default, this is set to "today".
 - freq: The frequency at which returns will be downloaded.
-- interval: The time horizon of VaR. It is related to frequency (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
-- alpha: a float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
-- confidence_level: a float specifying the confidence level for the VaR calculation. By default, it is set to 0.95.
-- display: a boolean or string value indicating whether or not to display the results. The default value is set to True.
+- interval: The time horizon of VaR. It is related to frequency (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
+- alpha: A float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
+- confidence_level: A float specifying the confidence level for the VaR calculation. By default, it is set to 0.95.
+- display: A boolean or string value indicating whether or not to display the results. The default value is set to True.
 
 ### Example:
 
@@ -688,20 +688,20 @@ yf_conflevel_pVaR_port(tickers, positions, start_date, end_date, freq=freq, inte
 VaR = yf_conflevel_pVaR_port(tickers, positions, start_date, end_date, freq=freq, interval=interval, alpha=alpha, confidence_level=confidence_level, display=False)
 print(VaR)
 ```
-This example calculates parametric VaR with its lower and upper bound (95% confidence) for a Portfolio of a position of 2500 in "AAPL" and - 1000 in "MSFT.
+This example calculates parametric VaR with its lower and upper bound (95% confidence) for a Portfolio of a position of 2500 (long position) in "AAPL" and -1000 (short position) in "MSFT.
 
 `7. conflevel_pVaR_single`
 
 - VaR = conflevel_pVaR_single(returns, position,interval =1,  alpha=0.01 ,confidence_level = 0.95)
 
-The function 'conflevel_pVaR_single' enables the calculation of the confidence level of parametric VaR for a SINGLE POSITION based on a set of returns.
+The function 'conflevel_pVaR_single' enables the calculation of the confidence level of parametric VaR for a SINGLE POSITION based on a set of returns (you can use every type of assets e.g stock, options, bonds, ecc.).
 
 #### Args:
 
-- returns: a pandas Series or NumPy array containing the historical returns of the asset.
+- returns: A pandas Series or NumPy array containing the historical returns of the asset.
 - position: The size of the position in the asset. This can be a positive or negatie number, depending if you are long or short.
-- interval: The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
-- confidence_level: a float specifying the confidence level for the VaR calculation. By default, it is set to 0.95.
+- interval: The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
+- confidence_level: A float specifying the confidence level for the VaR calculation. By default, it is set to 0.95.
 - alpha: The level of confidence for the VaR calculation. By default is set to 0.01, which represents a 99% confidence level.
 
 ### Example:
@@ -717,21 +717,21 @@ alpha = 0.01
 VaR = conflevel_pVaR_single(returns, position, interval=interval, confidence_level=confidence_level, alpha=alpha)
 print(VaR)
 ```
-This example calculates the parametric VaR and its lower and upper bound (95% confidence interval) consisting of a position of -1000 in the given asset.
+This example calculates the parametric VaR and its lower and upper bound (95% confidence interval) consisting of a position of -1000 (short position) in the given asset.
 
 `8. conflevel_pVaR_port`
 
 - VaR = conflevel_pVaR_port(returns, positions ,interval =1,  alpha=0.01 ,confidence_level = 0.95)
 
-The function 'conflevel_pVaR_port' enables the calculation of the confidence level of parametric VaR for a PORTFOLIO based on a set of returns.
+The function 'conflevel_pVaR_port' enables the calculation of the confidence level of parametric VaR for a PORTFOLIO based on a set of returns (you can use every type of assets e.g stock, options, bonds, ecc.).
 
 #### Args:
 
-- returns: a pandas Series or NumPy array containing the historical returns of the portfolio.
+- returns: A pandas Series or NumPy array containing the historical returns of the portfolio.
 - positions: A list of integers or floats representing each position in the portfolio. This can be a positive or negative number, depending if you are long or short.
-- interval: The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
-- confidence_level: a float specifying the confidence level for the VaR calculation. By default, it is set to 0.95.
-- alpha : The level of confidence for the VaR calculation. By default is set to 0.01, which represents a 99% confidence level.
+- interval: The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
+- confidence_level: A float specifying the confidence level for the VaR calculation. By default, it is set to 0.95.
+- alpha: The level of confidence for the VaR calculation. By default is set to 0.01, which represents a 99% confidence level.
 
 ### Example:
 
@@ -761,9 +761,9 @@ The function 'yf_und_vs_pVaR_port' enables the calculation of the undiversified 
 - start_date: A string representing the starting date for the historical data used in the VaR calculation. This should be in the format "YYYY-MM-DD".
 - end_date: A string representing the ending date for the historical data used in the VaR calculation. This should also be in the format "YYYY-MM-DD".By default, this is set to "today".
 - freq: The frequency at which returns will be downloaded.
-- interval: The time horizon of VaR. It is related to frequency (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
-- alpha: a float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
-- display : a boolean or string value indicating whether or not to display the results. The default value is set to True.
+- interval: The time horizon of VaR. It is related to frequency (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
+- alpha: A float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
+- display : A boolean or string value indicating whether or not to display the results. The default value is set to True.
 
 ### Example:
 
@@ -788,14 +788,14 @@ This example calculates the 5-day undiversified and parametric VaR for a Portfol
 
 -  VaR = und_vs_pVaR_port(returns, position, interval = 1, alpha=0.01)
 
-The function 'und_vs_pVaR_port' enables the calculation of the undiversified VaR and the parametric VaR for a PORTFOLIO based on a set of returns.
+The function 'und_vs_pVaR_port' enables the calculation of the undiversified VaR and the parametric VaR for a PORTFOLIO based on a set of returns (you can use every type of assets e.g stock, options, bonds, ecc.).
 
 #### Args:
 
 - returns: A list or array of historical returns for a portfolio.
-- positions : A list or array of current positions for the assets in the portfolio. This can be a positive or negative number, depending if you are long or short.
-- interval: The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
-- alpha : The level of confidence for the VaR calculation. By default is set to 0.01, which represents a 99% confidence level.
+- positions: A list or array of current positions for the assets in the portfolio. This can be a positive or negative number, depending if you are long or short.
+- interval: The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
+- alpha: The level of confidence for the VaR calculation. By default is set to 0.01, which represents a 99% confidence level.
 
 ### Example:
 
@@ -824,9 +824,9 @@ The function 'yf_marginal_VaRs' enables the calculation of the Marginal VaRs for
 - start_date: A string representing the starting date for the historical data used in the VaR calculation. This should be in the format "YYYY-MM-DD".
 - end_date: A string representing the ending date for the historical data used in the VaR calculation. This should also be in the format "YYYY-MM-DD".By default, this is set to "today".
 - freq: The frequency at which returns will be downloaded.
-- interval: The time horizon of VaR. It is related to frequency (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
-- alpha: a float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
-- display": a boolean or string value indicating whether or not to display the results. The default value is set to True.
+- interval: The time horizon of VaR. It is related to frequency (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
+- alpha: A float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
+- display": A boolean or string value indicating whether or not to display the results. The default value is set to True.
 
 ### Example:
 
@@ -851,13 +851,13 @@ This example calculates the 5-day marginal parametrics VaR for a Portfolio with 
 
 -  mVars = marginal_VaRs(returns, positions, interval=1, alpha=0.01)
 
-The function 'marginal_VaRs' enables the calculation of the marginal VaRs of a portfolio, given a set of returns and positions
+The function 'marginal_VaRs' enables the calculation of the marginal VaRs of a portfolio, given a set of returns and positions.
 
 #### Args:
 
-- returns: a pandas Series or NumPy array containing the historical returns of the portfolio.
+- returns: A pandas Series or NumPy array containing the historical returns of the portfolio.
 - positions: A list of integers or floats representing each position in the portfolio. This can be a positive or negative number, depending if you are long or short.
-- interval: The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+- interval: The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 - alpha: The level of confidence for the VaR calculation. By default is set to 0.01, which represents a 99% confidence level.
 
 ### Example:
@@ -879,7 +879,7 @@ and long positions of 7000 in the third asset.
 
 -  yf_componets_VaRs(tickers, positions, start_date, end_date,interval = 1, freq="daily", alpha=0.01, display=True)
 
-The function 'yf_componets_VaRs' enables the calculation of the Component VaRs for a PORTFOLIO by utilizing data obtained from Yahoo Finance (yFinance).
+The function 'yf_components_VaRs' enables the calculation of the Component VaRs for a PORTFOLIO by utilizing data obtained from Yahoo Finance (yFinance).
 
 #### Args:
 
@@ -888,9 +888,9 @@ The function 'yf_componets_VaRs' enables the calculation of the Component VaRs f
 - start_date: A string representing the starting date for the historical data used in the VaR calculation. This should be in the format "YYYY-MM-DD".
 - end_date: A string representing the ending date for the historical data used in the VaR calculation. This should also be in the format "YYYY-MM-DD".By default, this is set to "today".
 - freq: The frequency at which returns will be downloaded.
-- interval: The time horizon of VaR. It is related to frequency (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
-- alpha: a float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
-- display: a boolean or string value indicating whether or not to display the results. The default value is set to True.
+- interval: The time horizon of VaR. It is related to frequency (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
+- alpha: A float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
+- display: A boolean or string value indicating whether or not to display the results. The default value is set to True.
 
 ### Example:
 
@@ -915,13 +915,13 @@ This example calculates the 5-day component parametrics VaRs for a Portfolio wit
 
 -  cVars = componets_VaRs(returns, positions, interval=1, alpha=0.01)
 
-The function 'componets_VaRs' enables the calculation of the componets VaRs of a portfolio, given a set of returns
+The function 'components_VaRs' enables the calculation of the components VaRs of a portfolio, given a set of returns.
 
 #### Args:
 
-- returns: a pandas Series or NumPy array containing the historical returns of the portfolio.
+- returns: A pandas Series or NumPy array containing the historical returns of the portfolio.
 - positions: A list of integers or floats representing each position in the portfolio. This can be a positive or negative number, depending if you are long or short.
-- interval: The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+- interval: The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 - alpha: The level of confidence for the VaR calculation. By default is set to 0.01, which represents a 99% confidence level.
 
 ### Example:
@@ -936,13 +936,13 @@ alpha = 0.01
 cVars = componets_VaRs(returns, positions, interval=interval, alpha=alpha)
 print(cVars)
 ```
-This example calculates the componet VaRs of a Portfolio consisting of a short positions of 1000 in the first asset, long positions of 2500 in the second asset,  and long positions of 7000 in the third asset.
+This example calculates the component VaRs of a Portfolio consisting of a short positions of 1000 in the first asset, long positions of 2500 in the second asset,  and long positions of 7000 in the third asset.
 
 `15. yf_relcomponets_VaRs`
 
 - yf_relcomponets_VaRs(tickers, positions, start_date, end_date,interval = 1, freq="daily", alpha=0.01, display=True)
 
-The function 'yf_relative_componets_VaRs' enables the calculation of the Relative Component VaRs for a PORTFOLIO by utilizing data obtained from Yahoo Finance (yFinance).
+The function 'yf_relative_components_VaRs' enables the calculation of the Relative Component VaRs for a PORTFOLIO by utilizing data obtained from Yahoo Finance (yFinance).
 
 #### Args:
 
@@ -951,9 +951,9 @@ The function 'yf_relative_componets_VaRs' enables the calculation of the Relativ
 - start_date: A string representing the starting date for the historical data used in the VaR calculation. This should be in the format "YYYY-MM-DD".
 - end_date: A string representing the ending date for the historical data used in the VaR calculation. This should also be in the format "YYYY-MM-DD".By default, this is set to "today".
 - freq: The frequency at which returns will be downloaded.
-- interval: The time horizon of VaR. It is related to frequency (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
-- alpha: a float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
-- display: a boolean or string value indicating whether or not to display the results. The default value is set to True.
+- interval: The time horizon of VaR. It is related to frequency (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
+- alpha: A float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
+- display: A boolean or string value indicating whether or not to display the results. The default value is set to True.
 
 ### Example:
 
@@ -978,13 +978,13 @@ This example calculates the 5-day relative component parametrics VaRs for a Port
 
 -  rcVars = relcomponets_VaRs(returns, positions, interval=1, alpha=0.01)
 
-The function 'relcomponets_VaRs' enables the calculation of the relative componets VaRs of a portfolio, given its returns.
+The function 'relcomponents_VaRs' enables the calculation of the relative components VaRs of a portfolio, given its returns.
 
 #### Args:
 
-- returns: a pandas Series or NumPy array containing the historical returns of the portfolio.
+- returns: A pandas Series or NumPy array containing the historical returns of the portfolio.
 - positions: A list of integers or floats representing each position in the portfolio. This can be a positive or negative number, depending if you are long or short.
-- interval: The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+- interval: The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 - alpha: The level of confidence for the VaR calculation. By default is set to 0.01, which represents a 99% confidence level.
 
 
@@ -1000,5 +1000,5 @@ alpha = 0.01
 rcVars = relcomponets_VaRs(returns, positions, interval=interval, alpha=alpha)
 print(rcVars)
 ```
-This example calculates the relative componet VaRs of a Portfolio consisting of a short positions of 1000 in the first asset, long positions of 2500 in the second asset, and long positions of 7000 in the third asset.
+This example calculates the relative component VaRs of a Portfolio consisting of a short positions of 1000 in the first asset, long positions of 2500 in the second asset, and long positions of 7000 in the third asset.
 
