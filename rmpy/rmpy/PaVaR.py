@@ -373,7 +373,7 @@ def pVaR_port(returns: np.ndarray,
     >>> positions = [-1000,2500,7000]
     >>> interval = 1
     >>> alpha = 0.01
-    >>> VaR = pVaR_port(returns, position, interval = interval, alpha=alpha)
+    >>> VaR = pVaR_port(returns, positions, interval = interval, alpha=alpha)
 
     This example calculates the parametric VaR consisting of a portfolio with short positions of 1000 in the first asset, long positions of 2500 in the second asset, 
     and long positions of 7000 in the third asset.
@@ -588,7 +588,7 @@ def yf_conflevel_pVaR_port(tickers : List[str],
     Example
     -------
     >>> from rmpy.PaVaR import yf_conflevel_pVaR_port
-    >>> tickers = ['AAPL',"MSFT]
+    >>> tickers = ['AAPL',"MSFT"]
     >>> positions = [2500,-1000]
     >>> start_date = '2020-01-01'
     >>> end_date = '2021-12-31'
@@ -1012,7 +1012,7 @@ def und_vs_pVaR_port(returns: np.ndarray,
     >>> positions = [-1000,2500,7000]
     >>> interval = 1
     >>> alpha = 0.01
-    >>> VaR = und_vs_pVaR_port(returns, position, interval = interval, alpha=alpha)
+    >>> VaR = und_vs_pVaR_port(returns, positions, interval = interval, alpha=alpha)
     >>> print(VaR)
 
     This example calculates the 5-day undiversified and parametric VaR for a Portfolio with short position of 1000 in the first asset, 2500 in the second one and 7000 in the third one.
