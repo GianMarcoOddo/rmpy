@@ -31,7 +31,7 @@ def yf_npVaR_single(ticker : str,
     
     Args
     -------
-    This function yf_npVaR_single calculates the quantile non-parametric value at risk (VaR) for a SINGLE asset position using historical prices obtained from Yahoo Finance (yfinance).
+    This function yf_npVaR_single calculates the quantile non-parametric Value at Risk (VaR) for a SINGLE asset position using historical prices obtained from Yahoo Finance (yfinance).
     
     The arguments of this function are:
 
@@ -276,7 +276,7 @@ def npVaR_single(returns: np.ndarray,
     
     Args
     -------
-    This function npVaR_single calculates the quantile non-parametric value at risk (VaR) for a SINGLE asset using historical returns data (you can use every type of assets e.g stock,options,bonds, ecc.)
+    This function npVaR_single calculates the quantile non-parametric Value at Risk (VaR) for a SINGLE asset using historical returns data (you can use every type of assets e.g stock,options,bonds, ecc.)
     
     The arguments of this function are:
 
@@ -370,7 +370,7 @@ def npVaR_port(returns: np.ndarray,
     
     Args
     -------
-    This function npVaR_port calculates the quantile non-parametric value at risk (VaR) for a PORTFOLIO of assets using historical returns data (you can use every type of assets e.g stock,options,bonds, ecc.) 
+    This function npVaR_port calculates the quantile non-parametric Value at Risk (VaR) for a PORTFOLIO of assets using historical returns data (you can use every type of assets e.g stock, options, bonds, ecc.) 
     
     The arguments of this function are:
 
@@ -488,7 +488,7 @@ def yf_conflevel_npVaR_single(ticker : str,
     
     Args
     -------
-    This function yf_conflevel_npVaR_single calculates the quantile non-parametric value at risk (VaR) for a SINGLE asset using Yahoo Finance data. It first downloads historical price data from Yahoo Finance, 
+    This function yf_conflevel_npVaR_single calculates the quantile non-parametric Value at Risk (VaR) for a SINGLE asset using Yahoo Finance data. It first downloads historical price data from Yahoo Finance, 
     calculates the returns of the asset, and then calculates the VaR a its confidence level (lower and upper bound)
 
     The arguments of this function are:
@@ -612,7 +612,7 @@ def yf_conflevel_npVaR_port(tickers: List[str],
     
     Args
     -------
-    This function yf_conflevel_npVaR_port calculates the quantile non-parametric value at risk (VaR) for a PORTFOLIO of assets using Yahoo Finance data. It first downloads historical price data from Yahoo Finance
+    This function yf_conflevel_npVaR_port calculates the quantile non-parametric Value at Risk (VaR) for a PORTFOLIO of assets using Yahoo Finance data. It first downloads historical price data from Yahoo Finance
     for each asset in the portfolio, calculates the returns of each asset, and then  calculates the portfolio VaR, the lower and the upper bound at a specified confidence level and alpha level.
 
     The arguments of this function are:
@@ -739,7 +739,7 @@ def conflevel_npVaR_single(returns: np.ndarray,
     
     Args
     -------
-    This function conflevel_npVaR_single calculates the quantile non-parametric value at risk (VaR) for a SINGLE asset using historical returns data (you can use every type of assets e.g stock,options,bonds, ecc.) with 
+    This function conflevel_npVaR_single calculates the quantile non-parametric Value at Risk (VaR) for a SINGLE asset using historical returns data (you can use every type of assets e.g stock,options,bonds, ecc.) with 
     a specific confidence interval and alpha value. It also caluculates the lower and upper bound for the non-parametric VaR.
 
     The arguments of this function are:
@@ -888,7 +888,7 @@ def conflevel_npVaR_port(returns : np.ndarray,
     
     Args
     -------
-    This function conflevel_npVaR_port calculates the quantile non-parametric value at risk (VaR) for a PORTFOLIO of assets using historical returns data (you can use every type of assets e.g stock,options,bonds, ecc.) with 
+    This function conflevel_npVaR_port calculates the quantile non-parametric Value at Risk (VaR) for a PORTFOLIO of assets using historical returns data (you can use every type of assets e.g stock,options,bonds, ecc.) with 
     a specific confidence interval and alpha value. It also calculates the lower and the upper bound of this estimation. 
 
     The arguments of this function are:
@@ -1022,7 +1022,7 @@ def yf_npVaR_summary_single(ticker: str,
     
     Args
     -------
-    This function yf_npVaR_summary_single calculates the quantile non-parametric value at risk (VaR) for a SINGLE stock position using historical prices obtained from Yahoo Finance (yfinance).
+    This function yf_npVaR_summary_single calculates the quantile non-parametric Value at Risk (VaR) for a SINGLE stock position using historical prices obtained from Yahoo Finance (yfinance).
     This function is usefull to visualize some risk metrics of the single asset npVaR.
 
     The arguments of this function are:
@@ -1393,15 +1393,15 @@ def npVaR_summary_port(returns: np.ndarray,
     
     Args
     -------
-    The function npVaR_summary_port calculates the quantile non-parametric value at risk (VaR) and several metrics for a npVaR of a portfolio.
+    The function npVaR_summary_port calculates the quantile non-parametric Value at Risk (VaR) and several metrics for a npVaR of a portfolio.
     
     The argument of this function are:
 
-   "returns": A numpy array or pandas series of historical returns for the portfolio.
+    "returns": A numpy array or pandas series of historical returns for the portfolio.
 
-    "positions" which is a pandas DataFrame or numpy array containing the value held for each asset in the portfolio;
+    "positions": A pandas DataFrame or numpy array containing the value held for each asset in the portfolio;
 
-    "alpha": which is the confidence level for the VaR calculation (default value is 0.01).
+    "alpha": The confidence level for the VaR calculation (default value is 0.01).
 
     The function first calculates the evolution of the portfolio over time based on the provided positions. It then calculates the VaR, maximum loss, maximum excess loss, maximum excess loss over VaR, 
     expected shortfall, and expected shortfall over VaR, all of which are returned in a dictionary. The VaR and expected shortfall are calculated using a non-parametric method based on the historical returns 
@@ -1420,7 +1420,7 @@ def npVaR_summary_port(returns: np.ndarray,
     >>> print(summary)
 
     This example shows how to use the npVaR_summary_port function with a 10x3 numpy array of historical returns and a list of positions for 3 assets in the portfolio. 
-    The function calculates the non-parametric value at risk (VaR) and other risk measures, returning them in a dictionary.
+    The function calculates the non-parametric Value at Risk (VaR) and other risk measures, returning them in a dictionary.
 
     *************************************************************************************************************************************************************************************************************************
     '''
@@ -1622,18 +1622,18 @@ def marg_NpVaRs_scale_factor(returns: np.ndarray,
     
     Args
     -------
-    The function marg_NpVaRs_scale_factor calculates the marginal changes in the non-parametric value at risk (NpVaR) of a PORTFOLIO based on a specified scale factor. 
+    The function marg_NpVaRs_scale_factor calculates the marginal changes in the non-parametric Value at Risk (NpVaR) of a PORTFOLIO based on a specified scale factor. 
     New position = old one + (old one * scale_factor) in the same direction (- if short and + if long)
 
     The argument of this function are:
 
     "returns": A numpy array or pandas series of historical returns for the portfolio.
 
-    "positions": a list or array containing the current positions of the assets in the portfolio.
+    "positions": A list or array containing the current positions of the assets in the portfolio.
 
-    "scale_factor": a float representing the scale factor to be used for calculating the marginal changes in NpVaR.
+    "scale_factor": A float representing the scale factor to be used for calculating the marginal changes in NpVaR.
 
-    "alpha": a float representing the significance level for calculating the NpVaR.
+    "alpha": A float representing the significance level for calculating the NpVaR.
 
     *********************************************************************************************************************************************************************************************************
 
