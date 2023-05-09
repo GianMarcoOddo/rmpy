@@ -46,6 +46,8 @@ It contains the following functions:
 
 This function yf_npVaR_single calculates the quantile non-parametric value at risk (VaR) for a SINGLE asset position using historical prices obtained from Yahoo Finance (yfinance).
 
+Non-parametric VaR is a method of calculating the minimum amount of loss that an asset is likely to experience at a given confidence level, using historical data and without assuming any particular probability distribution.
+
 #### Args:
 
 - ticker: the asset symbol or ticker of the company for the npVaR will be calculated
@@ -83,6 +85,8 @@ This example calculates the daily non-parametric VaR for a short position of 100
 
 This function calculates the quantile non-parametric Value at Risk (VaR) for a portfolio of assets using historical prices obtained from Yahoo Finance (yfinance).
 
+Non-parametric VaR is a way of estimating the potential downside risk of a portfolio that does not rely on any specific assumptions about the shape or parameters of the underlying probability distribution.
+
 #### Args:
 
 - tickers: A list of strings representing the tickers of the assets in the portfolio. #### Note that all the TICKERS provided should be part of the portfolio whose VaR is being calculated ####
@@ -117,7 +121,9 @@ This example calculates the daily non-parametric VaR for a Portfolio with short 
 
 - VaR = npVaR_single(returns, position, alpha=0.01, kind = "abs")
 
-This function npVaR_single calculates the quantile non-parametric Value at Risk (VaR) for a SINGLE asset using historical returns data (you can use every type of assets e.g stock, options, bonds, ecc.)
+This function npVaR_single calculates the quantile non-parametric Value at Risk (VaR) for a SINGLE asset using historical returns data (you can use every type of assets e.g stock, options, bonds, etc.).
+
+Non-parametric VaR is a way to estimate the potential loss that an asset may experience over a given period, based on a ranking of the historical returns without making any assumptions about the underlying probability distribution.
 
 #### Args:
 
@@ -144,7 +150,9 @@ This example calculates the absolute non-parametric VaR consisting of a single s
 
 - VaR = npVaR_port(returns, position, alpha=0.01, kind = "abs")
 
-This function npVaR_port calculates the quantile non-parametric value at risk (VaR) for a PORTFOLIO of assets using historical returns data (you can use every type of assets e.g stock, options, bonds, ecc.) 
+This function npVaR_port calculates the quantile non-parametric value at risk (VaR) for a PORTFOLIO of assets using historical returns data (you can use every type of assets e.g stock, options, bonds, etc.).
+
+Non-parametric VaR is a risk management tool that uses a variety of techniques, such as bootstrapping, to estimate the distribution of returns based on historical data, without making any assumptions about the underlying probability distribution.
 
 #### Args:
 
@@ -172,6 +180,8 @@ This example calculates the relative non-parametric VaR consisting of a portfoli
 - yf_conflevel_npVaR_single(ticker, position, start_date, end_date, freq="daily", alpha= 0.01,confidence_level = 0.95, display=True)
 
 This function yf_conflevel_npVaR_single calculates the quantile non-parametric Value at Risk (VaR) for a SINGLE asset using Yahoo Finance data. It first downloads historical price data from Yahoo Finance, calculates the returns of the asset, and then calculates the VaR at its confidence level (lower and upper bound).
+
+Non-parametric VaR is a risk management technique used to estimate the potential losses in an asset, based on empirical data rather than any assumptions about the underlying distribution of the returns.
 
 #### Args:
 
@@ -209,6 +219,8 @@ This example calculates the absolute non-parametric VaR with its lower and upper
 
 This function yf_conflevel_npVaR_port calculates the quantile non-parametric Value at Risk (VaR) for a PORTFOLIO of assets using Yahoo Finance data. It first downloads historical price data from Yahoo Finance for each asset in the portfolio, calculates the returns of each asset, and then  calculates the portfolio VaR, the lower and the upper bound at a specified confidence level and alpha level.
 
+Non-parametric VaR is a risk management approach that uses non-parametric methods such as kernel density estimation to estimate the distribution of returns without assuming any specific distribution.
+
 #### Args:
 
 - tickers: a list of symbols of the assets in the portfolio to calculate VaR for.
@@ -245,6 +257,8 @@ This example calculates the daily non-parametric VaR with its lower and upper bo
 
 This function conflevel_npVaR_single calculates the quantile non-parametric value at risk (VaR) for a SINGLE asset using historical returns data (you can use every type of assets e.g stock,options,bonds, ecc.) with a specific confidence interval and alpha value. It also caluculates the lower and upper bound for the non-parametric VaR.
 
+Non-parametric VaR is a measure of the worst-case loss that an asset is likely to experience at a given confidence level, using empirical data to estimate the distribution of returns without relying on any particular parametric model.
+
 #### Args:
 
  - returns: A NumPy array or pd.Series of historical returns of a single asset.
@@ -275,6 +289,8 @@ This example calculates the non-parametric VaR and its lower and upper bound (95
 
 This function conflevel_npVaR_port calculates the quantile non-parametric Value at Risk (VaR) for a PORTFOLIO of assets using historical returns data (you can use every type of assets e.g stock, options, bonds, ecc.) with a specific confidence interval and alpha value. It also calculates the lower and the upper bound of this estimation. 
 
+Non-parametric VaR is a way of estimating the potential downside risk of a portfolio that is based on quantiles of the historical returns rather than any specific parametric model.
+
 #### Args:
 
 - returns: A NumPy array of historical returns for the portfolio.
@@ -301,6 +317,8 @@ This example calculates the non-parametric VaR consisting and its lower and uppe
 - yf_npVaR_summary_single(ticker, position, start_date, end_date, freq="daily", alpha=0.01, display=display)
     
 This function yf_npVaR_summary_single calculates the quantile non-parametric Value at Risk (VaR) for a SINGLE stock position using historical prices obtained from Yahoo Finance (yfinance). This function is useful to visualize some risk metrics of the single asset npVaR.
+
+Non-parametric VaR is a risk management technique that uses a variety of statistical techniques, such as historical simulation, to estimate the distribution of returns without relying on any specific probability distribution.
 
 #### Args:
 
@@ -334,6 +352,8 @@ This example calculates several metrics for the non-parametric VaR summary for a
 - yf_npVaR_summary_port(tickers, positions, start_date, end_date, freq="daily", alpha=0.01, display=True)
 
  This function 'yf_npVaR_summary_port' is designed to calculate the quantile non-parametric Value at Risk (VaR) for a PORTFOLIO of assets using historical prices obtained from Yahoo Finance (yfinance). This function is useful to visualize several risk metrics of the Portfolio npVaR.
+ 
+Non-parametric VaR is a risk management technique that estimates the minimum loss a portfolio is likely to experience based on historical data, without assuming any specific probability distribution or parametric model.
 
 #### Args:
 
@@ -369,6 +389,8 @@ This example calculates several metrics for the non-parametric VaR for a portofl
 
 This function called npVaR_summary_single that calculates the quantile Non-Parametric Value at Risk (VaR) and several risk metrics for a SINGLE asset and returns a summary of the VaR calculation.
 
+Non-parametric VaR is a risk management technique that uses order statistics, such as percentiles, to estimate the potential losses that an asset may experience without making any assumptions about the underlying distribution.
+
 #### Args:
 
 - returns: A numpy array or pandas series of historical returns for the asset.
@@ -394,6 +416,8 @@ This example calculates all the metrics for the non-parametric VaR for a single 
 
 The function npVaR_summary_port calculates the quantile non-parametric Value at Risk (VaR) and several risk metrics for a npVaR of a portfolio.
 
+Non-parametric VaR is a risk management tool that uses a variety of techniques, to estimate the distribution of returns based on historical data, without making any assumptions about the underlying probability distribution.
+
 #### Args:
 
 - returns: A numpy array or pandas series of historical returns for the portfolio.
@@ -417,7 +441,9 @@ This example shows how to use the npVaR_summary_port function with a 10x3 numpy 
 
 - yf_marg_NpVaRs_scale_factor(tickers, positions, start_date, end_date, scale_factor=0.1, freq="daily", alpha=0.01, display=True)
 
-The function yf_marg_NpVaRs_scale_factor calculates the Marginal Non-Parametric VaRs and their changes for a PORTFOLIO of assets over a given period of time, using a specified scale factor,using historical prices obtained from Yahoo Finance (yfinance). New position = old one + (old one * scale_factor) in the same direction (- if short and + if long)
+The function yf_marg_NpVaRs_scale_factor calculates the Marginal Non-Parametric VaRs and their changes for a PORTFOLIO of assets over a given period of time, using a specified scale factor,using historical prices obtained from Yahoo Finance (yfinance). New position = old one + (old one * scale_factor) in the same direction (- if short and + if long).
+
+Marginal Non-Parametric VaRs refer to the individual VaRs of each asset in a portfolio, calculated without assuming any specific probability distribution. They help identify which assets contribute the most to the overall risk of the portfolio and can be used to make informed decisions about risk management strategies, such as diversification or hedging.
 
 #### Args:
 
@@ -453,7 +479,9 @@ This example demonstrates how to use the yf_marg_NpVaRs_scale_factor function wi
 
 - NpVaR_changes = marg_NpVaRs_scale_factor(returns, positions, alpha=0.01)
 
-The function marg_NpVaRs_scale_factor calculates the marginal changes in the non-parametric value at risk (NpVaR) of a PORTFOLIO based on a specified scale factor. New position = old one + (old one * scale_factor) in the same direction (- if short and + if long)
+The function marg_NpVaRs_scale_factor calculates the marginal changes in the non-parametric value at risk (NpVaR) of a PORTFOLIO based on a specified scale factor. New position = old one + (old one * scale_factor) in the same direction (- if short and + if long).
+
+Marginal Non-Parametric VaRs refer to the individual VaRs of each asset in a portfolio, calculated without assuming any specific probability distribution. They help identify which assets contribute the most to the overall risk of the portfolio and can be used to make informed decisions about risk management strategies, such as diversification or hedging.
 
 #### Args:
 
@@ -492,6 +520,8 @@ The following functions are included:
 
 The function 'yf_pVaR_single' enables the calculation of parametric VaR for a SINGLE POSITION by utilizing data obtained from Yahoo Finance (yFinance).
 
+Parametric VaR is a risk management technique used to estimate the potential losses in an asset of assets, based on assumptions about the underlying distribution of the returns, such as the normal distribution.
+
 #### Args:
 
 - ticker: The stock symbol or identifier for the financial instrument in question (e.g. "AAPL" for Apple Inc.).
@@ -527,6 +557,8 @@ This example calculates the daily parametric VaR for a short position of 1000 in
 - yf_pVaR_port(tickers, positions,  start_date, end_date,interval = 1, freq="daily", alpha=0.01, display=True)
 
 The function 'yf_pVaR_port' enables the calculation of parametric VaR for a PORTFOLIO by utilizing data obtained from Yahoo Finance (yFinance).
+
+Parametric VaR is a statistical method of calculating the minimum amount of loss that a portfolio is likely to experience at a given confidence level, using a parametric model to estimate the distribution of returns.
 
 #### Args:
 
@@ -565,6 +597,8 @@ This example calculates the 5-day parametric VaR for a Portfolio with short posi
 
 The function 'pVaR_single' enables the calculation of parametric VaR for a SINGLE POSITION based on a set of returns (you can use every type of assets e.g stock, options, bonds, ecc.).
 
+Parametric VaR is a way of estimating the potential downside risk of an asset that relies on specific assumptions about the shape and parameters of the underlying probability distribution, such as mean and standard deviation.
+
 #### Args:
 
 - returns: A pandas Series or NumPy array containing the historical returns of the asset or portfolio. 
@@ -591,6 +625,8 @@ This example calculates the parametric VaR consisting of a single short position
 - VaR = pVaR_port(returns, position,  interval = 1, alpha=0.01)
 
 The function 'pVaR_port' enables the calculation of parametric VaR for a PORTOFLIO based on a set of returns (you can use every type of assets e.g stock, options, bonds, ecc.).
+
+Parametric VaR is a risk management tool that estimate the distribution of returns and potential losses in a portfolio.
 
 #### Args:
 
@@ -619,6 +655,8 @@ and long positions of 7000 in the third asset.
 -  yf_conflevel_pVaR_single(ticker, position, start_date, end_date, freq="daily",interval =1,  alpha=0.01 ,confidence_level = 0.95, display=True)
 
 The function 'yf_conflevel_pVaR_single' enables the calculation of the confidence level of parametric VaR for a SINGLE POSITION by utilizing data obtained from Yahoo Finance (yFinance).
+
+Parametric VaR is a way to estimate the potential loss that an asset may experience over a given period, based on the assumption of a specific probability distribution and its parameters.
 
 #### Args:
 
@@ -658,6 +696,8 @@ This example calculates parametric VaR with its lower and upper bound (95% confi
 
 The function 'yf_conflevel_pVaR_port' enables the calculation of the confidence level of parametric VaR for a PORTFOLIO by utilizing data obtained from Yahoo Finance (yFinance).
 
+Parametric VaR is a measure of the worst-case loss that a portfolio is likely to experience at a given confidence level, using a parametric model to estimate the distribution of returns and potential losses.
+
 #### Args:
 
 - tickers: A list of strings representing the tickers of the assets in the portoflio. #### Note that the tickers provided should be part of the portoflio ####
@@ -696,6 +736,8 @@ This example calculates parametric VaR with its lower and upper bound (95% confi
 
 The function 'conflevel_pVaR_single' enables the calculation of the confidence level of parametric VaR for a SINGLE POSITION based on a set of returns (you can use every type of assets e.g stock, options, bonds, ecc.).
 
+Parametric VaR is a way of estimating the potential downside risk of an asset that is based on specific parametric assumptions about the underlying probability distribution, such as skewness and kurtosis.
+
 #### Args:
 
 - returns: A pandas Series or NumPy array containing the historical returns of the asset.
@@ -725,6 +767,8 @@ This example calculates the parametric VaR and its lower and upper bound (95% co
 
 The function 'conflevel_pVaR_port' enables the calculation of the confidence level of parametric VaR for a PORTFOLIO based on a set of returns (you can use every type of assets e.g stock, options, bonds, ecc.).
 
+Parametric VaR is a statistical method of calculating the minimum amount of loss that a portfolio is likely to experience at a given confidence level, using a parametric model to estimate the distribution of returns.
+
 #### Args:
 
 - returns: A pandas Series or NumPy array containing the historical returns of the portfolio.
@@ -753,6 +797,8 @@ This example calculates the parametric VaR for a Portfolio and its lower and upp
 -  yf_und_vs_pVaR_port(tickers, positions, start_date, end_date,interval = 1, freq="daily", alpha=0.01, display=True)
 
 The function 'yf_und_vs_pVaR_port' enables the calculation of the undiversified VaR and the parametric VaR for a PORTFOLIO by utilizing data obtained from Yahoo Finance (yFinance).
+
+Undiversified VaR is a measure of the potential loss of a portfolio that does not take into account the effects of diversification, i.e., it assumes that all the assets in the portfolio move in the same direction. Parametric VaR takes into account the correlation between the assets in the portfolio, which can result in a lower estimate of potential losses. 
 
 #### Args:
 
@@ -790,6 +836,8 @@ This example calculates the 5-day undiversified and parametric VaR for a Portfol
 
 The function 'und_vs_pVaR_port' enables the calculation of the undiversified VaR and the parametric VaR for a PORTFOLIO based on a set of returns (you can use every type of assets e.g stock, options, bonds, ecc.).
 
+Undiversified VaR is a measure of the potential loss of a portfolio that does not take into account the effects of diversification, i.e., it assumes that all the assets in the portfolio move in the same direction. Parametric VaR takes into account the correlation between the assets in the portfolio, which can result in a lower estimate of potential losses. 
+
 #### Args:
 
 - returns: A list or array of historical returns for a portfolio.
@@ -816,6 +864,8 @@ This example calculates the 5-day undiversified and parametric VaR for a Portfol
 -  yf_marginal_VaRs(tickers, positions, start_date, end_date,interval = 1, freq="daily", alpha=0.01, display=display)
 
 The function 'yf_marginal_VaRs' enables the calculation of the Marginal VaRs for a PORTFOLIO by utilizing data obtained from Yahoo Finance (yFinance).
+
+Marginal VaR is the amount of potential loss that adding an additional unit of an asset to a portfolio would contribute to the overall VaR of the portfolio.
 
 #### Args:
 
@@ -853,6 +903,8 @@ This example calculates the 5-day marginal parametrics VaR for a Portfolio with 
 
 The function 'marginal_VaRs' enables the calculation of the marginal VaRs of a portfolio, given a set of returns and positions.
 
+Marginal VaR is the change in the overall VaR of a portfolio when the position size of a particular asset or position is increased or decreased.
+
 #### Args:
 
 - returns: A pandas Series or NumPy array containing the historical returns of the portfolio.
@@ -880,6 +932,8 @@ and long positions of 7000 in the third asset.
 -  yf_components_VaRs(tickers, positions, start_date, end_date,interval = 1, freq="daily", alpha=0.01, display=True)
 
 The function 'yf_components_VaRs' enables the calculation of the Component VaRs for a PORTFOLIO by utilizing data obtained from Yahoo Finance (yFinance).
+
+Component VaR is a technique that breaks down the total VaR of a portfolio into the individual VaR contributions of each asset or factor, allowing investors to identify which components of the portfolio are driving the risk.
 
 #### Args:
 
@@ -917,6 +971,8 @@ This example calculates the 5-day component parametrics VaRs for a Portfolio wit
 
 The function 'components_VaRs' enables the calculation of the components VaRs of a portfolio, given a set of returns.
 
+Component VaR is a risk management tool that allows investors to analyze the contribution of each asset or factor to the overall VaR of a portfolio.
+
 #### Args:
 
 - returns: A pandas Series or NumPy array containing the historical returns of the portfolio.
@@ -943,6 +999,8 @@ This example calculates the component VaRs of a Portfolio consisting of a short 
 - yf_relcomponents_VaRs(tickers, positions, start_date, end_date,interval = 1, freq="daily", alpha=0.01, display=True)
 
 The function 'yf_relative_components_VaRs' enables the calculation of the Relative Component VaRs for a PORTFOLIO by utilizing data obtained from Yahoo Finance (yFinance).
+
+Relative Component VaR is a variation of Component VaR that takes into account the weight or investment in each asset or factor, allowing investors to assess the contribution of each component to the overall VaR in proportion to its size.
 
 #### Args:
 
@@ -979,6 +1037,8 @@ This example calculates the 5-day relative component parametrics VaRs for a Port
 -  rcVars = relcomponents_VaRs(returns, positions, interval=1, alpha=0.01)
 
 The function 'relcomponents_VaRs' enables the calculation of the relative components VaRs of a portfolio, given its returns.
+
+Relative Component VaR is a risk management approach that breaks down the total VaR of a portfolio into the individual VaR contributions of each asset or factor, taking into account the investment or weight of each component, and provides a relative measure of the contribution of each component to the overall VaR.
 
 #### Args:
 
