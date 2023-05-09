@@ -42,7 +42,7 @@ def yf_pVaR_single(ticker : str,
 
     "end_date": A string representing the ending date for the historical data used in the VaR calculation. This should also be in the format "YYYY-MM-DD".By default, this is set to "today".
 
-    "interval": The time horizon of VaR. It is related to frequency (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+    "interval": The time horizon of VaR. It is related to frequency (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 
     "freq": The frequency at which returns will be downloaded.
 
@@ -159,7 +159,7 @@ def yf_pVaR_port(tickers: List[str],
 
     "end_date": A string representing the ending date for the historical data used in the VaR calculation. This should also be in the format "YYYY-MM-DD".By default, this is set to "today".
 
-    "interval": The time horizon of VaR. It is related to frequency (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+    "interval": The time horizon of VaR. It is related to frequency (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 
     "freq": The frequency at which returns will be downloaded.
 
@@ -279,7 +279,7 @@ def pVaR_single(returns : np.ndarray,
 
     "position": the size of the position in units of the asset. 
 
-    "interval": The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+    "interval": The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 
     "alpha": the confidence level for the VaR calculation. This is a value between 0 and 1, representing the probability of loss exceeding the VaR. 
     By default, this is set to 0.01 (1%).
@@ -355,7 +355,7 @@ def pVaR_port(returns: np.ndarray,
 
     "positions": A list of integers or floats representing each position in the portfolio. This can be a positive or negative number, depending if you are long or short.
 
-    "interval": The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+    "interval": The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 
     "alpha": The level of confidence for the VaR calculation. By default is set to 0.01, which represents a 99% confidence level.
 
@@ -447,13 +447,13 @@ def yf_conflevel_pVaR_single(ticker : str,
 
     "freq": The frequency at which returns will be downloaded.
 
-    "interval": The time horizon of VaR. It is related to frequency (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+    "interval": The time horizon of VaR. It is related to frequency (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 
-    "alpha": a float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
+    "alpha": A float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
 
-    "confidence_level": a float specifying the confidence level for the VaR calculation. By default, it is set to 0.95.
+    "confidence_level": A float specifying the confidence level for the VaR calculation. By default, it is set to 0.95.
 
-    "display": a boolean or string value indicating whether or not to display the results. The default value is set to True.
+    "display": A boolean or string value indicating whether or not to display the results. The default value is set to True.
 
     *********************************************************************************************************************************************************************************************************
 
@@ -575,13 +575,13 @@ def yf_conflevel_pVaR_port(tickers : List[str],
 
     "freq": The frequency at which returns will be downloaded.
 
-    "interval": The time horizon of VaR. It is related to frequency (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+    "interval": The time horizon of VaR. It is related to frequency (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 
-    "alpha": a float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
+    "alpha": A float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
 
-    "confidence_level": a float specifying the confidence level for the VaR calculation. By default, it is set to 0.95.
+    "confidence_level": A float specifying the confidence level for the VaR calculation. By default, it is set to 0.95.
 
-    "display": a boolean or string value indicating whether or not to display the results. The default value is set to True.
+    "display": A boolean or string value indicating whether or not to display the results. The default value is set to True.
 
     *******************************************************************************************************************************************************************************************
 
@@ -694,9 +694,9 @@ def conflevel_pVaR_single(returns: np.ndarray,
 
     "position": The size of the position in the asset. This can be a positive or negative number, depending if you are long or short.
 
-    "interval": The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+    "interval": The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 
-    "confidence_level": a float specifying the confidence level for the VaR calculation. By default, it is set to 0.95.
+    "confidence_level": A float specifying the confidence level for the VaR calculation. By default, it is set to 0.95.
 
     "alpha": The level of confidence for the VaR calculation. By default is set to 0.01, which represents a 99% confidence level.
 
@@ -776,13 +776,13 @@ def conflevel_pVaR_port(returns: np.ndarray,
 
     The arguments of the function are: 
 
-    "returns": a pandas Series or NumPy array containing the historical returns of the portfolio.
+    "returns": A pandas Series or NumPy array containing the historical returns of the portfolio.
 
     "positions": A list of integers or floats representing each position in the portfolio. This can be a positive or negative number, depending if you are long or short.
 
-    "interval": The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+    "interval": The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 
-    "confidence_level": a float specifying the confidence level for the VaR calculation. By default, it is set to 0.95.
+    "confidence_level": A float specifying the confidence level for the VaR calculation. By default, it is set to 0.95.
 
     "alpha": The level of confidence for the VaR calculation. By default is set to 0.01, which represents a 99% confidence level.
 
@@ -872,7 +872,7 @@ def yf_und_vs_pVaR_port(tickers: List[str],
 
     The arguments of the function are: 
 
-    "tickers: A list of strings representing the tickers of the assets in the portoflio. #### Note that the tickers provided should be part of the portoflio ####
+    "tickers": A list of strings representing the tickers of the assets in the portoflio. #### Note that the tickers provided should be part of the portoflio ####
 
     "positions": A list of integers or floats representing each position in the portfolio. This can be a positive or negative number, depending if you are long or short.
 
@@ -882,11 +882,11 @@ def yf_und_vs_pVaR_port(tickers: List[str],
 
     "freq": The frequency at which returns will be downloaded.
 
-    "interval": The time horizon of VaR. It is related to frequency (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+    "interval": The time horizon of VaR. It is related to frequency (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 
-    "alpha": a float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
+    "alpha": A float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
 
-    "display": a boolean or string value indicating whether or not to display the results. The default value is set to True.
+    "display": A boolean or string value indicating whether or not to display the results. The default value is set to True.
 
     *******************************************************************************************************************************************************************************************
 
@@ -999,7 +999,7 @@ def und_vs_pVaR_port(returns: np.ndarray,
 
     "positions": A list or array of current positions for the assets in the portfolio. This can be a positive or negative number, depending if you are long or short.
 
-    "interval": The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+    "interval": The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 
     "alpha": The level of confidence for the VaR calculation. By default is set to 0.01, which represents a 99% confidence level.
 
@@ -1090,7 +1090,7 @@ def yf_marginal_VaRs(tickers: List[str],
     
     The arguments of the function are: 
 
-    "tickers: A list of strings representing the tickers of the assets in the portoflio. #### Note that the tickers provided should be part of the portoflio ####
+    "tickers": A list of strings representing the tickers of the assets in the portoflio. #### Note that the tickers provided should be part of the portoflio ####
 
     "positions": A list of integers or floats representing each position in the portfolio. This can be a positive or negative number, depending if you are long or short.
 
@@ -1100,11 +1100,11 @@ def yf_marginal_VaRs(tickers: List[str],
 
     "freq": The frequency at which returns will be downloaded.
 
-    "interval": The time horizon of VaR. It is related to frequency (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+    "interval": The time horizon of VaR. It is related to frequency (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 
-    "alpha": a float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
+    "alpha": A float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
 
-    "display": a boolean or string value indicating whether or not to display the results. The default value is set to True.
+    "display": A boolean or string value indicating whether or not to display the results. The default value is set to True.
 
     *******************************************************************************************************************************************************************************************
 
@@ -1209,11 +1209,11 @@ def marginal_VaRs(returns: np.ndarray,
 
     The arguments of the function are: 
 
-    "returns": a pandas Series or NumPy array containing the historical returns of the portfolio.
+    "returns": A pandas Series or NumPy array containing the historical returns of the portfolio.
 
     "positions": A list of integers or floats representing each position in the portfolio. This can be a positive or negative number, depending if you are long or short.
 
-    "interval": The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+    "interval": The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 
     "alpha": The level of confidence for the VaR calculation. By default is set to 0.01, which represents a 99% confidence level.
 
@@ -1260,10 +1260,10 @@ def marginal_VaRs(returns: np.ndarray,
     return marginal_VaRs
 
 
-## 13. yf_componets_VaRs ###############################################################################################################################################
+## 13. yf_components_VaRs ###############################################################################################################################################
 ##################################################################################################################################################################
 
-def yf_componets_VaRs(tickers: List[str], 
+def yf_components_VaRs(tickers: List[str], 
                   positions: List[Union[int, float]],
                   start_date: str,
                   end_date: str = "today",
@@ -1286,11 +1286,11 @@ def yf_componets_VaRs(tickers: List[str],
 
     Args
     ------- 
-    The function 'yf_componets_VaRs' enables the calculation of the Component VaRs for a PORTFOLIO by utilizing data obtained from Yahoo Finance (yFinance).
+    The function 'yf_components_VaRs' enables the calculation of the Component VaRs for a PORTFOLIO by utilizing data obtained from Yahoo Finance (yFinance).
 
     The arguments of the function are: 
 
-    "tickers: A list of strings representing the tickers of the assets in the portoflio. #### Note that the tickers provided should be part of the portoflio ####
+    "tickers": A list of strings representing the tickers of the assets in the portoflio. #### Note that the tickers provided should be part of the portoflio ####
 
     "positions": A list of integers or floats representing each position in the portfolio. This can be a positive or negative number, depending if you are long or short.
 
@@ -1300,17 +1300,17 @@ def yf_componets_VaRs(tickers: List[str],
 
     "freq": The frequency at which returns will be downloaded.
 
-    "interval": The time horizon of VaR. It is related to frequency (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+    "interval": The time horizon of VaR. It is related to frequency (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 
-    "alpha": a float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
+    "alpha": A float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
 
-    "display": a boolean or string value indicating whether or not to display the results. The default value is set to True.
+    "display": A boolean or string value indicating whether or not to display the results. The default value is set to True.
     
     *******************************************************************************************************************************************************************************************
 
     Example
     -------
-    >>> from rmpy.PaVaR import yf_componets_VaRs
+    >>> from rmpy.PaVaR import yf_components_VaRs
     >>> tickers = ['AAPL','MSFT'] 
     >>> positions = [-1000,5000] 
     >>> start_date = '2020-01-01'
@@ -1319,9 +1319,9 @@ def yf_componets_VaRs(tickers: List[str],
     >>> freq = "daily"
     >>> alpha = 0.01
     >>> display = True
-    >>> yf_componets_VaRs(tickers, positions, start_date, end_date,interval = interval, freq=freq, alpha=alpha, display=display)
+    >>> yf_components_VaRs(tickers, positions, start_date, end_date,interval = interval, freq=freq, alpha=alpha, display=display)
     >>> # OR
-    >>> cVars = yf_componets_VaRs(ticker, position, start_date, end_date,interval = interval, freq=freq, alpha=alpha, display=False)
+    >>> cVars = yf_components_VaRs(ticker, position, start_date, end_date,interval = interval, freq=freq, alpha=alpha, display=False)
     >>> print(cVars)
 
     This example calculates the 5-day component parametrics VaRs for a Portfolio with short position of 1000 in Apple Inc and a long position of 5000 in Microsoft Corp.
@@ -1374,20 +1374,20 @@ def yf_componets_VaRs(tickers: List[str],
     
     returns = get_data(tickers, start_date, end_date, freq)
 
-    from rmpy.PaVaR import componets_VaRs
+    from rmpy.PaVaR import components_VaRs
 
-    componets_VaRs = componets_VaRs(returns, positions, interval = interval,  alpha = alpha)
+    components_VaRs = components_VaRs(returns, positions, interval = interval,  alpha = alpha)
     if display:
-            rounded_componets_VaRs = [round(value, 4) for value in componets_VaRs]
-            var_dict = dict(zip(tickers, rounded_componets_VaRs))
+            rounded_components_VaRs = [round(value, 4) for value in components_VaRs]
+            var_dict = dict(zip(tickers, rounded_components_VaRs))
             print(var_dict)
-    return componets_VaRs
+    return components_VaRs
 
 
-## 14. componets_VaRs ###############################################################################################################################################
+## 14. components_VaRs ###############################################################################################################################################
 ##################################################################################################################################################################
 
-def componets_VaRs(returns: np.ndarray,
+def components_VaRs(returns: np.ndarray,
             positions: List[Union[int, float]],
             interval: int = 1,
             alpha: float = 0.01) ->list:
@@ -1406,15 +1406,15 @@ def componets_VaRs(returns: np.ndarray,
 
     Args
     ------- 
-    The function 'componets_VaRs' enables the calculation of the componets VaRs of a portfolio, given a set of returns
+    The function 'components_VaRs' enables the calculation of the components VaRs of a portfolio, given a set of returns
 
     The arguments of the function are: 
 
-    "returns": a pandas Series or NumPy array containing the historical returns of the portfolio.
+    "returns": A pandas Series or NumPy array containing the historical returns of the portfolio.
 
     "positions": A list of integers or floats representing each position in the portfolio. This can be a positive or negative number, depending if you are long or short.
 
-    "interval": The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+    "interval": The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 
     "alpha": The level of confidence for the VaR calculation. By default is set to 0.01, which represents a 99% confidence level.
 
@@ -1423,12 +1423,12 @@ def componets_VaRs(returns: np.ndarray,
 
     Example
     ------- 
-    >>> from rmpy.PaVaR import componets_VaRs ; import numpy as np
+    >>> from rmpy.PaVaR import components_VaRs ; import numpy as np
     >>> returns = np.random.uniform(-0.05, 0.05, size=(10, 3)) # Replace this with actual returns
     >>> positions = [-1000,2500,7000]
     >>> interval = 1
     >>> alpha = 0.01
-    >>> cVars = componets_VaRs(returns, positions, interval=interval, alpha=alpha)
+    >>> cVars = components_VaRs(returns, positions, interval=interval, alpha=alpha)
     >>> print(cVars)
 
     This example calculates the componet VaRs of a Portfolio consisting of a short positions of 1000 in the first asset, long positions of 2500 in the second asset, 
@@ -1458,14 +1458,14 @@ def componets_VaRs(returns: np.ndarray,
     q = norm.ppf(1-alpha, loc=0, scale=1)
     VaR = q * sigma * np.sqrt(interval)
     marginal_VaRs =  ((np.dot(variance_cov_matrix,positions.T)) / var_port) * VaR
-    componets_VaRs = marginal_VaRs.T * positions
+    components_VaRs = marginal_VaRs.T * positions
 
-    return componets_VaRs
+    return components_VaRs
 
-## 15. yf_relcomponets_VaRs ###############################################################################################################################################
+## 15. yf_relcomponents_VaRs ###############################################################################################################################################
 ##################################################################################################################################################################
 
-def yf_relcomponets_VaRs(tickers: List[str], 
+def yf_relcomponents_VaRs(tickers: List[str], 
                   positions: List[Union[int, float]],
                   start_date: str,
                   end_date: str = "today",
@@ -1488,7 +1488,7 @@ def yf_relcomponets_VaRs(tickers: List[str],
 
     Args
     ------- 
-    The function 'yf_relative_componets_VaRs' enables the calculation of the Relative Component VaRs for a PORTFOLIO by utilizing data obtained from Yahoo Finance (yFinance).
+    The function 'yf_relative_components_VaRs' enables the calculation of the Relative Component VaRs for a PORTFOLIO by utilizing data obtained from Yahoo Finance (yFinance).
 
     The arguments of the function are: 
 
@@ -1502,17 +1502,17 @@ def yf_relcomponets_VaRs(tickers: List[str],
 
     "freq": The frequency at which returns will be downloaded.
 
-    "interval": The time horizon of VaR. It is related to frequency (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+    "interval": The time horizon of VaR. It is related to frequency (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 
-    "alpha": a float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
+    "alpha": A float specifying the significance level for the VaR calculation. By default, this is set to 0.01, which corresponds to a 99% confidence level.
 
-    "display": a boolean or string value indicating whether or not to display the results. The default value is set to True.
+    "display": A boolean or string value indicating whether or not to display the results. The default value is set to True.
     
     *******************************************************************************************************************************************************************************************
 
     Example
     -------
-    >>> from rmpy.PaVaR import yf_relcomponets_VaRs
+    >>> from rmpy.PaVaR import yf_relcomponents_VaRs
     >>> tickers = ['AAPL','MSFT'] 
     >>> positions = [-1000,5000] 
     >>> start_date = '2020-01-01'
@@ -1521,9 +1521,9 @@ def yf_relcomponets_VaRs(tickers: List[str],
     >>> freq = "daily"
     >>> alpha = 0.01
     >>> display = True
-    >>> yf_relcomponets_VaRs(tickers, positions, start_date, end_date,interval = interval, freq=freq, alpha=alpha, display=display)
+    >>> yf_relcomponents_VaRs(tickers, positions, start_date, end_date,interval = interval, freq=freq, alpha=alpha, display=display)
     >>> # OR
-    >>> rcVars = yf_relcomponets_VaRs(ticker, position, start_date, end_date,interval = interval, freq=freq, alpha=alpha, display=False)
+    >>> rcVars = yf_relcomponents_VaRs(ticker, position, start_date, end_date,interval = interval, freq=freq, alpha=alpha, display=False)
     >>> print(rcVars)
 
     This example calculates the 5-day relative component parametrics VaRs for a Portfolio with short position of 1000 in Apple Inc and a long position of 5000 in Microsoft Corp.
@@ -1576,21 +1576,21 @@ def yf_relcomponets_VaRs(tickers: List[str],
     
     returns = get_data(tickers, start_date, end_date, freq)
 
-    from rmpy.PaVaR import relcomponets_VaRs
+    from rmpy.PaVaR import relcomponents_VaRs
 
-    relcomponets_VaRs = relcomponets_VaRs(returns, positions, interval = interval,  alpha = alpha)
+    relcomponents_VaRs = relcomponents_VaRs(returns, positions, interval = interval,  alpha = alpha)
     if display:
-            rounded_relcomponets_VaRs = [round(value, 4) for value in relcomponets_VaRs]
-            var_dict = dict(zip(tickers, rounded_relcomponets_VaRs))
+            rounded_relcomponents_VaRs = [round(value, 4) for value in relcomponents_VaRs]
+            var_dict = dict(zip(tickers, rounded_relcomponents_VaRs))
             print(var_dict)
-    return relcomponets_VaRs
+    return relcomponents_VaRs
 
 
-## 16. relcomponets_VaRs ###############################################################################################################################################
+## 16. relcomponents_VaRs ###############################################################################################################################################
 ##################################################################################################################################################################
 
 
-def relcomponets_VaRs(returns: np.ndarray,
+def relcomponents_VaRs(returns: np.ndarray,
             positions: List[Union[int, float]],
             interval: int = 1,
             alpha: float = 0.01)  ->list:
@@ -1609,15 +1609,15 @@ def relcomponets_VaRs(returns: np.ndarray,
 
     Args
     ------- 
-    The function 'relcomponets_VaRs' enables the calculation of the relative componets VaRs of a portfolio 
+    The function 'relcomponents_VaRs' enables the calculation of the relative components VaRs of a portfolio 
 
     The arguments of the function are: 
 
-    "returns": a pandas Series or NumPy array containing the historical returns of the portfolio.
+    "returns": A pandas Series or NumPy array containing the historical returns of the portfolio.
 
     "positions": A list of integers or floats representing each position in the portfolio. This can be a positive or negative number, depending if you are long or short.
 
-    "interval": The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'montly' " and "interval = 1", the function compute 1-month VaR).
+    "interval": The time horizon of VaR. It is related to frequency of data used (e.g. if "freq = 'monthly' " and "interval = 1", the function computes 1-month VaR).
 
     "alpha": The level of confidence for the VaR calculation. By default is set to 0.01, which represents a 99% confidence level.
     
@@ -1625,12 +1625,12 @@ def relcomponets_VaRs(returns: np.ndarray,
 
     Example
     ------- 
-    >>> from rmpy.PaVaR import relcomponets_VaRs ; import numpy as np
+    >>> from rmpy.PaVaR import relcomponents_VaRs ; import numpy as np
     >>> returns = np.random.uniform(-0.05, 0.05, size=(10, 3)) # Replace this with actual returns
     >>> positions = [-1000,2500,7000]
     >>> interval = 1
     >>> alpha = 0.01
-    >>> rcVars = relcomponets_VaRs(returns, positions, interval=interval, alpha=alpha)
+    >>> rcVars = relcomponents_VaRs(returns, positions, interval=interval, alpha=alpha)
     >>> print(rcVars)
 
     This example calculates the relative componet VaRs of a Portfolio consisting of a short positions of 1000 in the first asset, long positions of 2500 in the second asset, 
@@ -1660,9 +1660,9 @@ def relcomponets_VaRs(returns: np.ndarray,
     q = norm.ppf(1-alpha, loc=0, scale=1)
     VaR = q * sigma * np.sqrt(interval)
     marginal_VaRs =  ((np.dot(variance_cov_matrix,positions.T)) / var_port) * VaR
-    componets_VaRs = marginal_VaRs.T * positions
-    relcomponets_VaRs = componets_VaRs / VaR
+    components_VaRs = marginal_VaRs.T * positions
+    relcomponents_VaRs = components_VaRs / VaR
 
-    return relcomponets_VaRs
+    return relcomponents_VaRs
 
 '''#############################################################################################################################################################################'''
