@@ -53,7 +53,7 @@ def check_ticker_single(ticker, types, name, single_value=False, values=None):
 ## check_position_single ################################################################################################################################################
 ############################################################################################################################################################################
 
-def check_position_single(position, name):
+def check_position_single(position,values, name, single_value=True):
     """
     Check if a position value is valid.
 
