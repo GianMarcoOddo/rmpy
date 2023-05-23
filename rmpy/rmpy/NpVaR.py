@@ -81,7 +81,7 @@ def yf_npVaR_single(ticker : str,
     # check ticker
     ticker = check_ticker_single(ticker, (str, list, np.ndarray, pd.Series), "ticker", single_value=True)
     # check position
-    position = check_position_single(position, (int, np.int32, np.int64, float, np.float32, np.float64, list, np.ndarray, pd.Series),"position", single_value=True) 
+    position = check_position_single(position) 
     # check dates
     start_date, end_date = check_and_convert_dates(start_date, end_date)
     # check freq
@@ -319,7 +319,7 @@ def npVaR_single(returns: np.ndarray,
     # check returns
     returns = validate_returns_single(returns)
     # check position
-    position = check_position_single(position, (int, np.int32, np.int64, float, np.float32, np.float64, list, np.ndarray, pd.Series),"position", single_value=True) 
+    position = check_position_single(position) 
     # check alpha
     alpha = check_alpha(alpha)
     # check kind
@@ -540,7 +540,7 @@ def yf_conflevel_npVaR_single(ticker : str,
     # check ticker
     ticker = check_ticker_single(ticker, (str, list, np.ndarray, pd.Series), "ticker", single_value=True)
     # check position
-    position = check_position_single(position, (int, np.int32, np.int64, float, np.float32, np.float64, list, np.ndarray, pd.Series),"position", single_value=True) 
+    position = check_position_single(position) 
     # check dates
     start_date, end_date = check_and_convert_dates(start_date, end_date)
     # check freq
@@ -780,12 +780,11 @@ def conflevel_npVaR_single(returns: np.ndarray,
     # check returns
     returns = validate_returns_single(returns)
     # check position
-    position = check_position_single(position, (int, float, list, np.ndarray, pd.Series), "position", single_value=True) 
+    position = check_position_single(position) 
     # check confidence_level 
     confidence_level = check_confidence_level(confidence_level)
     # check alpha
     alpha = check_alpha(alpha)
-
 
     # Testing for Normality
 
@@ -1084,7 +1083,7 @@ def yf_npVaR_summary_single(ticker: str,
     # check ticker
     ticker = check_ticker_single(ticker, (str, list, np.ndarray, pd.Series), "ticker", single_value=True)
     # check position
-    position = check_position_single(position, (int, float, list, np.ndarray, pd.Series), "position", single_value=True) 
+    position = check_position_single(position) 
     # check dates
     start_date, end_date = check_and_convert_dates(start_date, end_date)
     # check freq
@@ -1334,7 +1333,7 @@ def npVaR_summary_single(returns: np.ndarray,
     # check returns
     returns = validate_returns_single(returns)
     # check position
-    position = check_position_single(position, (int, float, list, np.ndarray, pd.Series), "position", single_value=True) 
+    position = check_position_single(position) 
     # check alpha
     alpha = check_alpha(alpha)
     
