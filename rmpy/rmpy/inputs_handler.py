@@ -372,7 +372,7 @@ def check_tickers_port(tickers):
 
         for ticker in tickers:
             if ticker == "":
-                raise TypeError("Either one or more than one not provided")
+                raise TypeError("Either one ticker or more than one ticker not provided")
             
         if len(tickers) == 0:
             raise Exception("The list with the tickers is empty")
