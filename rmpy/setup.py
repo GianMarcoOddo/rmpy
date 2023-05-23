@@ -7,7 +7,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="rmpy",
-    version="1.2.1",
+    version="1.2.2",
     packages=find_packages(),
     install_requires=[
         'numpy',
