@@ -21,6 +21,9 @@ def check_ticker_single(ticker, types, name, single_value=False, values=None):
     '''
     import pandas as pd ; import numpy as np
 
+    if ticker == "":
+        raise TypeError("Please insert a ticker")
+    
     # Check ticker type
     if not isinstance(ticker, types):
         raise TypeError(f"The {name} should be one of the following types: {types}")
@@ -50,7 +53,7 @@ def check_ticker_single(ticker, types, name, single_value=False, values=None):
 ## check_position_single ################################################################################################################################################
 ############################################################################################################################################################################
 
-def check_position_single(position, types, name, single_value=True):
+def check_position_single(position, name):
     """
     Check if a position value is valid.
 
@@ -71,7 +74,7 @@ def check_position_single(position, types, name, single_value=True):
 
     # Check input type
     if not isinstance(position, (int, np.int32, np.int64, float, np.float32, np.float64, list, np.ndarray, pd.Series)):
-        raise TypeError(f"The {name} should be one of the following types: {types}")
+        raise TypeError(f"The {name} should be a number!")
 
     # Convert to list
     if isinstance(position, (list, pd.Series, np.ndarray)):
@@ -111,6 +114,9 @@ def check_and_convert_dates(start_date, end_date):
     """
     from datetime import datetime; import dateutil.parser ; from datetime import date 
 
+    if start_date == "today":
+        raise ValueError(f"Please insert in the function a valid start_date format: [%Y-%m-%d, %Y.%m.%d, %Y/%m/%d ,%Y_%m_%d]")
+    
     # Function to convert a single date
     def convert_to_date(input, name):
         if input == "today":
@@ -275,7 +281,6 @@ def check_kind(kind, allowed_values=["abs", "rel"]):
     return kind
 
 
-
 ## check_display ################################################################################################################################################
 ############################################################################################################################################################################
 
@@ -364,6 +369,11 @@ def check_tickers_port(tickers):
         tickers = list(tickers)
 
     if isinstance(tickers, list):
+
+        for ticker in tickers:
+            if ticker == "":
+                raise TypeError("Either one or more than one not provided")
+            
         if len(tickers) == 0:
             raise Exception("The list with the tickers is empty")
         if np.ndim(tickers) > 1:
