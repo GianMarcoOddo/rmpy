@@ -53,7 +53,7 @@ def check_ticker_single(ticker, types, name, single_value=False, values=None):
 ## check_position_single ################################################################################################################################################
 ############################################################################################################################################################################
 
-def check_position_single(position,values, name, single_value=True):
+def check_position_single(position):
     """
     Check if a position value is valid.
 
@@ -74,7 +74,7 @@ def check_position_single(position,values, name, single_value=True):
 
     # Check input type
     if not isinstance(position, (int, np.int32, np.int64, float, np.float32, np.float64, list, np.ndarray, pd.Series)):
-        raise TypeError(f"The {name} should be a number!")
+        raise TypeError(f"The position should be a number!")
 
     # Convert to list
     if isinstance(position, (list, pd.Series, np.ndarray)):
@@ -83,13 +83,13 @@ def check_position_single(position,values, name, single_value=True):
             raise ValueError("No position provided")
         # Check for single value
         if len(position) > 1:
-            raise ValueError(f"More than one {name} has been provided. This function works only with one {name} at the time")
+            raise ValueError(f"More than one position has been provided. This function works only with one position at the time")
     
     if isinstance(position, (list)):
         position = position[0]
 
     if not isinstance(position, (int, np.int32, np.int64, float, np.float32, np.float64)):
-        raise TypeError(f"The {name} should be a number!")
+        raise TypeError(f"The position should be a number!")
 
     return position
 
