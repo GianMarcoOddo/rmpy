@@ -10,7 +10,7 @@ The `rmpy` package is a comprehensive and powerful tool designed for risk manage
 pip install rmpy
 ```
 ---
-## If the installation process encounters an error, make sure to have xcode installed by typing the following command in the terminal
+## For Mac Users: if the installation process encounters an error, make sure to have xcode installed by typing the following command in the terminal
 
 ```python
 xcode-select --install
