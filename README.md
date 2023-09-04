@@ -5,3 +5,5 @@ Originally created as a university project, rmpy serves as a lightweight, game-p
 Check it out here: https://github.com/GianMarcoOddo/pyriskmgmt
 
 For introductory information and basic functionalities of rmpy, please consult the README file located within the rmpy directory.
+
+For a detailed summary of the game-package, please consult the README.md file located within the rmpy directory
